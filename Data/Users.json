@@ -1,0 +1,23 @@
+[
+    {
+        "id": "user1",
+        "nombre": "Juan",
+        "correo": "juan@example.com",
+        "password": "password1",
+        "preferencias": ["movie 1", "movie 2"]
+    },
+    {
+        "id": "user2",
+        "nombre": "Ana",
+        "correo": "ana@example.com",
+        "password": "password2",
+        "preferencias": ["movie 3"]
+    },
+    {
+        "id": "user3",
+        "nombre": "Jhojan Grisales",
+        "correo": "admin@admin.com",
+        "password": "admin123",
+        "preferencias": ["movie 5","movie 7","movie 20","movie 30"]
+    }
+]

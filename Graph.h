@@ -52,5 +52,9 @@ public:
     Vertex<T> *addVertex(const T &value);
     Vertex<T> *getVertex(const T &value);
     void addEdge(const T &from, const T &to, int weight = 0);
+    void bfs(const T &startValue);
+    Vertex<T> *getVertexById(const string &id);
+    void addCategoryEdge(const string &movieId1, const string &movieId2);
+    bool aristaExiste(Vertex<T> *fromVertex, Vertex<T> *toVertex);
 };
 #endif
