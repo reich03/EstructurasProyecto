@@ -100,7 +100,7 @@ void enlazarPeliculasPorCategoria(Graph<PeliculaSerie> &movieGraph)
 
 // funcion recoje las categorias que usuario comento son de su preferencia para luego validar que peliculas estan enlazadas a esta y asi poder mostrarle recomendaciones en base a estas
 
-void recomendarPorCategoria(Graph<PeliculaSerie> &movieGraph, const vector<string> &categoriasPreferidas)
+void recomendarPorCategoria(const Graph<PeliculaSerie> &movieGraph, const vector<string> &categoriasPreferidas)
 {
     cout << "Recomendaciones basadas en tus categorías preferidas:" << endl;
     for (int i = 0; i < movieGraph.vertexList.size(); i++)
@@ -151,6 +151,134 @@ string verificarUsuario(const Graph<Usuario> &userGraph, const string &correo, c
     return ""; // Retorna una cadena vacía si no se encuentra el usuario
 }
 
+void elegirCategoriasDeInteres(vector<string> &categoriasPreferidas)
+{
+    int numCategorias;
+    cout << "¿Cuántas categorías te interesan? ";
+    cin >> numCategorias;
+
+    categoriasPreferidas.clear();
+    for (int i = 0; i < numCategorias; i++)
+    {
+        string categoria;
+        cout << "Ingresa la categoría " << i + 1 << ": ";
+        cin >> categoria;
+        categoriasPreferidas.push_back(categoria);
+    }
+}
+
+bool esCorreoUnico(const Graph<Usuario> &userGraph, const string &correo, const string &userIdExcluido)
+{
+    for (int i = 0; i < userGraph.vertexList.size(); i++)
+    {
+        const Usuario &user = userGraph.vertexList.get(i)->data;
+        if (user.correo == correo && user.id != userIdExcluido)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void actualizarInformacionUsuario(Graph<Usuario> &userGraph, const string &userId)
+{
+    Vertex<Usuario> *userVertex = userGraph.getVertexById(userId);
+    if (!userVertex)
+    {
+        cout << "Usuario no encontrado." << endl;
+        return;
+    }
+
+    Usuario &user = userVertex->data;
+    cout << "Actualizar información para " << user.nombre << ":" << endl;
+
+    // Actualizar nombre
+    cout << "Nuevo nombre (deja en blanco para mantener el actual): ";
+    string nuevoNombre;
+    getline(cin >> ws, nuevoNombre);
+    if (!nuevoNombre.empty())
+        user.nombre = nuevoNombre;
+
+    // Actualizar correo
+    string nuevoCorreo;
+    do
+    {
+        cout << "Nuevo correo electrónico (deja en blanco para mantener el actual): ";
+        getline(cin >> ws, nuevoCorreo);
+        if (!nuevoCorreo.empty() && !esCorreoUnico(userGraph, nuevoCorreo, user.id))
+        {
+            cout << "Este correo ya está en uso. Intenta con otro." << endl;
+        }
+    } while (!nuevoCorreo.empty() && !esCorreoUnico(userGraph, nuevoCorreo, user.id));
+    if (!nuevoCorreo.empty())
+        user.correo = nuevoCorreo;
+
+    // Actualizar contraseña
+    cout << "Nueva contraseña (deja en blanco para mantener la actual): ";
+    string nuevaPassword;
+    getline(cin >> ws, nuevaPassword);
+    if (!nuevaPassword.empty())
+        user.password = nuevaPassword;
+}
+
+void agregarPeliculaAPreferencias(Graph<Usuario> &userGraph, const string &userId, const string &movieId)
+{
+    Vertex<Usuario> *userVertex = userGraph.getVertexById(userId);
+    if (userVertex)
+    {
+        if (find(userVertex->data.preferencias.begin(), userVertex->data.preferencias.end(), movieId) == userVertex->data.preferencias.end())
+        {
+            userVertex->data.preferencias.push_back(movieId);
+            cout << "Película agregada a tus preferencias." << endl;
+        }
+        else
+        {
+            cout << "Esta película ya está en tus preferencias." << endl;
+        }
+    }
+}
+
+void mostrarPeliculasRecomendadas(Graph<Usuario> &userGraph, const Graph<PeliculaSerie> &movieGraph, const string &userId, const vector<string> &categoriasPreferidas)
+{
+    cout << "Recomendaciones basadas en tus categorías preferidas:" << endl;
+    for (int i = 0; i < movieGraph.vertexList.size(); i++)
+    {
+        PeliculaSerie pelicula = movieGraph.vertexList.get(i)->data;
+        for (const auto &categoria : pelicula.categorias)
+        {
+            if (find(categoriasPreferidas.begin(), categoriasPreferidas.end(), categoria) != categoriasPreferidas.end())
+            {
+                cout << " - " << pelicula.titulo << " (ID: " << pelicula.id << ")" << endl;
+                cout << "¿Deseas agregar esta película a tus preferencias? (s/n): ";
+                char respuesta;
+                cin >> respuesta;
+                if (respuesta == 's' || respuesta == 'S')
+                {
+                    agregarPeliculaAPreferencias(userGraph, userId, pelicula.id);
+                }
+                break;
+            }
+        }
+    }
+}
+void guardarUsuariosEnJSON(const Graph<Usuario> &userGraph, const string &archivo)
+{
+    json jsonUsuarios = json::array();
+    for (int i = 0; i < userGraph.vertexList.size(); i++)
+    {
+        Usuario user = userGraph.vertexList.get(i)->data;
+        json jUser;
+        jUser["id"] = user.id;
+        jUser["nombre"] = user.nombre;
+        jUser["correo"] = user.correo;
+        jUser["password"] = user.password;
+        jUser["preferencias"] = user.preferencias;
+        jsonUsuarios.push_back(jUser);
+    }
+    std::ofstream file(archivo);
+    file << jsonUsuarios.dump(4);
+}
+
 void mostrarMenu()
 {
     cout << "1. Ver mis preferencias" << endl;
@@ -165,6 +293,8 @@ int main()
 
     Graph<Usuario> userGraph;
     Graph<PeliculaSerie> movieGraph;
+    vector<string> categoriasPreferidas;
+
     // Crear y añadir usuarios
     // Cargar datos desde archivos JSON
     cargarUsuariosDesdeJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
@@ -196,10 +326,15 @@ int main()
             encontrarPreferenciasDeUsuario(userGraph, movieGraph, userId);
             break;
         case 2:
+            elegirCategoriasDeInteres(categoriasPreferidas);
             break;
         case 3:
+            mostrarPeliculasRecomendadas(userGraph, movieGraph, userId, categoriasPreferidas);
+            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
             break;
         case 4:
+            actualizarInformacionUsuario(userGraph, userId);
+            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
             break;
         case 5:
             cout << "Saliendo del programa." << endl;

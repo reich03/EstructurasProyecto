@@ -1,23 +1,38 @@
 [
     {
+        "correo": "juan@example.com",
         "id": "user1",
         "nombre": "Juan",
-        "correo": "juan@example.com",
         "password": "password1",
-        "preferencias": ["movie 1", "movie 2"]
+        "preferencias": [
+            "movie 1",
+            "movie 2"
+        ]
     },
     {
+        "correo": "ana@example.com",
         "id": "user2",
         "nombre": "Ana",
-        "correo": "ana@example.com",
         "password": "password2",
-        "preferencias": ["movie 3"]
+        "preferencias": [
+            "movie 3"
+        ]
     },
     {
+        "correo": "redjhojan0319@gmail.com",
         "id": "user3",
-        "nombre": "Jhojan Grisales",
-        "correo": "admin@admin.com",
-        "password": "admin123",
-        "preferencias": ["movie 5","movie 7","movie 20","movie 30"]
+        "nombre": "Jhojan Grisales mora",
+        "password": "admin1234",
+        "preferencias": [
+            "movie 5",
+            "movie 7",
+            "movie 20",
+            "movie 30",
+            "movie 2",
+            "movie 3",
+            "movie 52",
+            "movie 55",
+            "movie 58"
+        ]
     }
 ]
