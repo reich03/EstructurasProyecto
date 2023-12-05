@@ -18,6 +18,15 @@ public:
     explicit me_nuser(QWidget *parent = nullptr);
     ~me_nuser();
 
+private slots:
+    void on_home_clicked();
+
+    void on_likes_clicked();
+
+    void on_ch_password_clicked();
+
+    void on_delete_2_clicked();
+
 private:
     Ui::me_nuser *ui;
 };

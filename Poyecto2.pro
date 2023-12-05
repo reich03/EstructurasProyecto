@@ -9,6 +9,10 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    categories.cpp \
+    chang_passw.cpp \
+    chang_passw_admin.cpp \
+    delete_acc.cpp \
     favs.cpp \
     index_admin.cpp \
     index_nuser.cpp \
@@ -22,6 +26,10 @@ SOURCES += \
     view_users.cpp
 
 HEADERS += \
+    categories.h \
+    chang_passw.h \
+    chang_passw_admin.h \
+    delete_acc.h \
     favs.h \
     index_admin.h \
     index_nuser.h \
@@ -34,6 +42,10 @@ HEADERS += \
     view_users.h
 
 FORMS += \
+    categories.ui \
+    chang_passw.ui \
+    chang_passw_admin.ui \
+    delete_acc.ui \
     favs.ui \
     index_admin.ui \
     index_nuser.ui \

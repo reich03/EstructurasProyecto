@@ -1,6 +1,7 @@
 #include "login.h"
 #include "ui_login.h"
 #include "index_nuser.h"
+#include "categories.h"
 #include "QMessageBox"
 #include "QDebug"
 
@@ -19,7 +20,7 @@ Login::~Login()
 
 void Login::on_login_clicked()
 {
-    QString user=ui->user->text();
+    QString user=ui->email->text();
     QString passw=ui->Passw->text();
     QSqlQuery search;
     QString passw2;
@@ -44,8 +45,8 @@ void Login::on_login_clicked()
         message.setText("Welcome");
         message.exec();
         accept();
-        index_nuser *normal=new index_nuser(0);
-        normal->show();
+        categories *categoria=new categories(0);
+        categoria->show();
     }else{
         QMessageBox::critical(this,tr("ERROR"),tr("Incorrect Password"));
     }

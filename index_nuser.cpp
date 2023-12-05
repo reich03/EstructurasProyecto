@@ -21,9 +21,9 @@ void index_nuser::on_likes_clicked()
     fav->show();
 }
 
-
-/*void index_nuser::on_me_clicked()
+void index_nuser::on_me_clicked()
 {
-    me_nuser *
-}*/
+    me_nuser *me= new me_nuser(0);
+    me->show();
+}
 

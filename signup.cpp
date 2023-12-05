@@ -57,7 +57,7 @@ void SignUp::on_okandcancel_accepted()
     if(ui->Normal->isChecked()){
 
         QString name=ui->Name ->text();
-        QString user=ui->User ->text();
+        QString user=ui->Email ->text();
         QString password=ui->Passw ->text();
         qDebug()<<name;
         qDebug()<<user;
@@ -83,7 +83,7 @@ void SignUp::on_okandcancel_accepted()
 
     else{
         QString name=ui->Name ->text();
-        QString user=ui->User ->text();
+        QString user=ui->Email ->text();
         QString password=ui->Passw ->text();
         qDebug()<<name;
         qDebug()<<user;

@@ -18,6 +18,11 @@ public:
     explicit favs(QWidget *parent = nullptr);
     ~favs();
 
+private slots:
+    void on_home_clicked();
+
+    void on_me_clicked();
+
 private:
     Ui::favs *ui;
 };

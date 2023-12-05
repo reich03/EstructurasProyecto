@@ -2,6 +2,7 @@
 #include "ui_me_admin.h"
 #include "index_admin.h"
 #include "view_users.h"
+#include "chang_passw_admin.h"
 
 me_admin::me_admin(QWidget *parent) :
     QDialog(parent),

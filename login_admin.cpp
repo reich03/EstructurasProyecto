@@ -21,7 +21,7 @@ login_admin::~login_admin()
 
 void login_admin::on_login_adm_clicked()
 {
-    QString user=ui->user->text();
+    QString user=ui->email->text();
     QString passw=ui->Passw->text();
     QSqlQuery search;
     QString passw2;
