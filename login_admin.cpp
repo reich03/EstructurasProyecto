@@ -1,34 +1,36 @@
-#include "login.h"
-#include "ui_login.h"
-#include "index_nuser.h"
+#include "login_admin.h"
+#include "ui_login_admin.h"
 #include "QMessageBox"
+#include <QFileDialog>
+#include <QTextStream>
+#include <QFile>
 #include "QDebug"
+#include "index_admin.h"
 
-Login::Login(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::Login)
+login_admin::login_admin(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::login_admin)
 {
     ui->setupUi(this);
 }
 
-Login::~Login()
+login_admin::~login_admin()
 {
     delete ui;
 }
 
-
-void Login::on_login_clicked()
+void login_admin::on_login_adm_clicked()
 {
     QString user=ui->user->text();
     QString passw=ui->Passw->text();
     QSqlQuery search;
     QString passw2;
-    QString validate;
+    QString consult;
     QString name;
-    validate.append("SELECT * FROM normal_users where user='"+user+"'");
-    search.prepare(validate);
+    consult.append("SELECT * FROM admin where user='"+user+"'");
+    search.prepare(consult);
     if(search.exec()){
-        qDebug()<<"listo";
+        qDebug()<<"consulta";
         while(search.next()){
             passw2=search.value(1).toByteArray().constData();
             name=search.value(0).toByteArray().constData();
@@ -36,16 +38,16 @@ void Login::on_login_clicked()
             qDebug()<<name;
         }
     }else{
-        qDebug()<<"no listo";
-        QMessageBox::critical(this, tr("ERROR"), tr("User doesn't exist"));
+        qDebug()<<"no consulta";
+        QMessageBox::critical(this, tr("ERROR"),tr("User doesn't exist"));
     }
     if(passw2==passw){
         QMessageBox message;
         message.setText("Welcome");
         message.exec();
         accept();
-        index_nuser *normal=new index_nuser(0);
-        normal->show();
+        index *admin=new index(0);
+        admin->show();
     }else{
         QMessageBox::critical(this,tr("ERROR"),tr("Incorrect Password"));
     }

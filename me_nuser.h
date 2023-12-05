@@ -1,6 +1,9 @@
 #ifndef ME_NUSER_H
 #define ME_NUSER_H
-
+#include "QtSql/QSqlDatabase"
+#include "QtSql/qsqlquery.h"
+#include "QtSql/QSqlError"
+#include "QtSql/QSqlQuery"
 #include <QDialog>
 
 namespace Ui {

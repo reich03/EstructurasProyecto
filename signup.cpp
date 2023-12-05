@@ -22,9 +22,9 @@ void SignUp::table_nuser(){
 
     QString table_nuser;
     table_nuser.append("CREATE TABLE IF NOT EXISTS normal_users("
-                     "name VARCHAR(20),"
-                     "user VARCHAR(20) PRIMARY KEY,"
-                     "password VARCHAR(20)"
+                     "name VARCHAR(25),"
+                     "password VARCHAR(25),"
+                     "user VARCHAR(25) PRIMARY KEY"
                      ");");
 
     QSqlQuery create;
@@ -39,9 +39,9 @@ void SignUp::table_admin(){
 
     QString table_ad;
     table_ad.append("CREATE TABLE IF NOT EXISTS admin("
-                 "name VARCHAR(20),"
-                 "user VARCHAR(20) PRIMARY KEY,"
-                 "password VARCHAR(20)"
+                 "name VARCHAR(25),"
+                 "password VARCHAR(25),"
+                 "user VARCHAR(25) PRIMARY KEY"
                  ");");
 
     QSqlQuery create;
@@ -49,7 +49,7 @@ void SignUp::table_admin(){
     if(create.exec()){
         qDebug()<<"melo2";
     }else{
-        qDebug()<<"no melo2ad"<<create.lastError();}
+        qDebug()<<"no melo2admin"<<create.lastError();}
 }
 
 void SignUp::on_okandcancel_accepted()

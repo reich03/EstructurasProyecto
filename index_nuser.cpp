@@ -14,3 +14,16 @@ index_nuser::~index_nuser()
 {
     delete ui;
 }
+
+void index_nuser::on_likes_clicked()
+{
+    favs *fav = new favs(0);
+    fav->show();
+}
+
+
+/*void index_nuser::on_me_clicked()
+{
+    me_nuser *
+}*/
+

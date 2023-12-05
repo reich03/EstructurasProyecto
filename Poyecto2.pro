@@ -13,12 +13,12 @@ SOURCES += \
     index_admin.cpp \
     index_nuser.cpp \
     login.cpp \
+    login_admin.cpp \
     main.cpp \
     mainwindow.cpp \
     me_admin.cpp \
     me_nuser.cpp \
     signup.cpp \
-    view_movies.cpp \
     view_users.cpp
 
 HEADERS += \
@@ -26,11 +26,11 @@ HEADERS += \
     index_admin.h \
     index_nuser.h \
     login.h \
+    login_admin.h \
     mainwindow.h \
     me_admin.h \
     me_nuser.h \
     signup.h \
-    view_movies.h \
     view_users.h
 
 FORMS += \
@@ -38,11 +38,11 @@ FORMS += \
     index_admin.ui \
     index_nuser.ui \
     login.ui \
+    login_admin.ui \
     mainwindow.ui \
     me_admin.ui \
     me_nuser.ui \
     signup.ui \
-    view_movies.ui \
     view_users.ui
 
 # Default rules for deployment.

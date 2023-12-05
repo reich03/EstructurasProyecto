@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "login.h"
 #include "signup.h"
+#include "login_admin.h"
 #include <QFileDialog>
 #include <QTextStream>
 #include <QFile>
@@ -45,7 +46,7 @@ void MainWindow::on_NUser_clicked()
 
 void MainWindow::on_Admin_clicked()
 {
-    Login *admin = new Login(0);
+    login_admin *admin= new login_admin(0);
     admin->show();
 }
 
