@@ -1,95 +1,104 @@
 [
-     {
-          "categoriasInteres": [],
-          "correo": "juan@example.com",
-          "id": "user1",
-          "nombre": "Juan",
-          "password": "password1",
-          "preferencias": []
-     },
-     {
-          "categoriasInteres": [
-               "Drama",
-               "Animacion"
-          ],
-          "correo": "ana@example.com",
-          "id": "user2",
-          "nombre": "ana perez",
-          "password": "password",
-          "preferencias": []
-     },
-     {
-          "categoriasInteres": [
-               "Terror",
-               "Animacion",
-               "Musical"
-          ],
-          "correo": "redjhojan0319@gmail.com",
-          "id": "user3",
-          "nombre": "Jhojan grisales",
-          "password": "admin",
-          "preferencias": [
-               "movie 17",
-               "movie 33",
-               "movie 59",
-               "movie 98"
-          ]
-     },
-     {
-          "categoriasInteres": [],
-          "correo": "ejemplo4@gmail.com",
-          "id": "user4",
-          "nombre": "Andres mora",
-          "password": "admin1234",
-          "preferencias": []
-     },
-     {
-          "categoriasInteres": [],
-          "correo": "ejemplo5@gmail.com",
-          "id": "user5",
-          "nombre": "suati chat",
-          "password": "admin1234",
-          "preferencias": []
-     },
-     {
-          "categoriasInteres": [],
-          "correo": "ejemplo6@gmail.com",
-          "id": "user6",
-          "nombre": "jhojan",
-          "password": "ejemplo123",
-          "preferencias": []
-     },
-     {
-          "categoriasInteres": [],
-          "correo": "pedro@gmail.com",
-          "id": "user7",
-          "nombre": "pedro",
-          "password": "suatixd",
-          "preferencias": []
-     },
-     {
-          "categoriasInteres": [],
-          "correo": "ejemplo7@gmail.com",
-          "id": "user8",
-          "nombre": "elpapu",
-          "password": "nose",
-          "preferencias": []
-     },
-     {
-          "categoriasInteres": [
-               "Acción",
-               "Documental",
-               "Biografia"
-          ],
-          "correo": "pepe@example.com",
-          "id": "user9",
-          "nombre": "pepe macias",
-          "password": "admin",
-          "preferencias": [
-               "movie 3",
-               "movie 22",
-               "movie 71",
-               "movie 81"
-          ]
-     }
+    {
+        "categoriasInteres": [],
+        "correo": "juan@example.com",
+        "id": "user1",
+        "nombre": "Juan",
+        "password": "password1",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [
+            "Drama",
+            "Animacion"
+        ],
+        "correo": "ana@example.com",
+        "id": "user2",
+        "nombre": "ana perez",
+        "password": "password",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [
+            "Terror",
+            "Animacion",
+            "Musical"
+        ],
+        "correo": "redjhojan0319@gmail.com",
+        "id": "user3",
+        "nombre": "Jhojan Grisales",
+        "password": "admin",
+        "preferencias": [
+            "movie 17",
+            "movie 33",
+            "movie 59",
+            "movie 98"
+        ],
+        "rol": "ADMIN"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "ejemplo4@gmail.com",
+        "id": "user4",
+        "nombre": "Andres mora",
+        "password": "admin1234",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "ejemplo5@gmail.com",
+        "id": "user5",
+        "nombre": "suati chat",
+        "password": "admin1234",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "ejemplo6@gmail.com",
+        "id": "user6",
+        "nombre": "jhojan",
+        "password": "ejemplo123",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "pedro@gmail.com",
+        "id": "user7",
+        "nombre": "pedro",
+        "password": "suatixd",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "ejemplo7@gmail.com",
+        "id": "user8",
+        "nombre": "elpapu",
+        "password": "nose",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [
+            "Acción",
+            "Documental",
+            "Biografia"
+        ],
+        "correo": "pepe@example.com",
+        "id": "user9",
+        "nombre": "pepe macias",
+        "password": "admin",
+        "preferencias": [
+            "movie 3",
+            "movie 22",
+            "movie 71",
+            "movie 81"
+        ],
+        "rol": "USER"
+    }
 ]

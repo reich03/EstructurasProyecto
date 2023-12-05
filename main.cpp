@@ -83,10 +83,13 @@ void cargarUsuariosDesdeJSON(Graph<Usuario> &userGraph, const string &archivo)
         user.password = j.at("password").get<string>();
         j.at("preferencias").get_to(user.preferencias);
         j.at("categoriasInteres").get_to(user.categoriasInteres);
+        string rolStr = j.value("rol", "USER");
+        user.rol = (rolStr == "ADMIN") ? ADMIN : USER;
 
         userGraph.addVertex(user);
     }
 }
+
 void cargarPeliculasDesdeJSON(Graph<PeliculaSerie> &movieGraph, const string &archivo)
 {
     std::ifstream file(archivo);
@@ -552,10 +555,12 @@ void guardarUsuariosEnJSON(const Graph<Usuario> &userGraph, const string &archiv
         jUser["password"] = user.password;
         jUser["preferencias"] = user.preferencias;
         jUser["categoriasInteres"] = user.categoriasInteres;
+        jUser["rol"] = (user.rol == ADMIN) ? "ADMIN" : "USER";
+
         jsonUsuarios.push_back(jUser);
     }
     std::ofstream file(archivo);
-    file << jsonUsuarios.dump(5);
+    file << jsonUsuarios.dump(4);
 }
 
 void guardarPeliculasEnJSON(const Graph<PeliculaSerie> &movieGraph, const string &archivo)
@@ -601,7 +606,7 @@ void mostrarCategorias()
     cout << "16. Misterio" << endl;
 }
 
-void crearNuevoUsuario(Graph<Usuario> &userGraph)
+void crearNuevoUsuario(Graph<Usuario> &userGraph, RolUsuario rolUsuarioCreando)
 {
     Usuario newUser;
     cout << "Crear nuevo usuario" << endl;
@@ -614,44 +619,71 @@ void crearNuevoUsuario(Graph<Usuario> &userGraph)
     newUser.id = "user" + to_string(userGraph.vertexList.size() + 1);
     newUser.preferencias = vector<string>();
 
-    mostrarCategorias();
-    cout << "¿Cuántas categorías te interesan? ";
-    int numCategorias;
-    cin >> numCategorias;
-
-    newUser.categoriasInteres.clear();
-    for (int i = 0; i < numCategorias; i++)
+    if (rolUsuarioCreando == ADMIN)
     {
-        int indiceCategoria;
-        cout << "Ingresa el número de la categoría " << i + 1 << ": ";
-        cin >> indiceCategoria;
-        Categoria categoria = obtenerCategoriaPorIndice(indiceCategoria);
-        newUser.categoriasInteres.push_back(categoriaToString(categoria));
+        cout << "Seleccione el rol para el nuevo usuario (1 para ADMIN, 2 para USER): ";
+        int rolSeleccionado;
+        cin >> rolSeleccionado;
+        newUser.rol = (rolSeleccionado == 1) ? ADMIN : USER;
+    }
+    else
+    {
+        newUser.rol = USER;
+    }
+
+    if (newUser.rol == USER)
+    {
+        mostrarCategorias();
+        cout << "¿Cuántas categorías te interesan? ";
+        int numCategorias;
+        cin >> numCategorias;
+
+        newUser.categoriasInteres.clear();
+        for (int i = 0; i < numCategorias; i++)
+        {
+            int indiceCategoria;
+            cout << "Ingresa el número de la categoría " << i + 1 << ": ";
+            cin >> indiceCategoria;
+            Categoria categoria = obtenerCategoriaPorIndice(indiceCategoria);
+            newUser.categoriasInteres.push_back(categoriaToString(categoria));
+        }
     }
 
     userGraph.addVertex(newUser);
     cout << "Usuario creado exitosamente. Su ID es: " << newUser.id << endl;
 }
 
-void mostrarMenu()
+void mostrarMenu(RolUsuario rol)
 {
     cout << "1. Ver mis preferencias" << endl;
-    cout << "2. Calificar peliculas de mi interes" << endl;
+    cout << "2. Calificar películas de mi interés" << endl;
     cout << "3. Mostrar películas recomendadas" << endl;
     cout << "4. Actualizar mi información" << endl;
+    if (rol == ADMIN)
+    {
+        cout << "6. Administrar películas" << endl;
+        cout << "7. Agregar usuario" << endl;
+    }
     cout << "5. Salir" << endl;
     cout << "Elige una opción: ";
 }
 
-void menuUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, const string &userId, vector<string> &categoriasPreferidas)
+void menuUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, const string &userId)
 {
+    Vertex<Usuario> *userVertex = userGraph.getVertexById(userId);
+    if (!userVertex)
+    {
+        cout << "Usuario no encontrado." << endl;
+        return;
+    }
 
+    Usuario &user = userVertex->data;
     int opcion = 0;
     do
     {
-        // limpiarPantalla();
-        mostrarMenu();
+        mostrarMenu(user.rol);
         cin >> opcion;
+
         if (cin.fail())
         {
             cin.clear();
@@ -683,6 +715,17 @@ void menuUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, co
         case 5:
             cout << "Saliendo del programa." << endl;
             break;
+        case 6:
+            if (user.rol == ADMIN)
+            {
+                // Llamar función para administrar películas
+            }
+            break;
+        case 7:
+            if (user.rol == ADMIN)
+            {
+                // Llamar función para agregar usuarios
+            }
         default:
             cout << "Opción no válida." << endl;
         }
@@ -698,17 +741,17 @@ void menuPrincipal()
 }
 int main()
 {
-
     Graph<Usuario> userGraph;
     Graph<PeliculaSerie> movieGraph;
     vector<string> categoriasPreferidas;
+    string correo, password, userId;
 
     // Crear y añadir usuarios
     // Cargar datos desde archivos JSON
     cargarUsuariosDesdeJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
     cargarPeliculasDesdeJSON(movieGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Movies/Series.json");
     enlazarPeliculasPorCategoria(movieGraph);
-    string correo, password;
+
     int opcionPrincipal;
 
     do
@@ -716,6 +759,7 @@ int main()
         limpiarPantalla();
         menuPrincipal();
         cin >> opcionPrincipal;
+
         if (opcionPrincipal == 1)
         {
             cout << "Correo electrónico: ";
@@ -723,25 +767,32 @@ int main()
             cout << "Contraseña: ";
             cin >> password;
 
-            // Verificar usuario
-            string userId = verificarUsuario(userGraph, correo, password);
+            userId = verificarUsuario(userGraph, correo, password);
             if (userId.empty())
             {
                 cout << "Usuario no encontrado o contraseña incorrecta." << endl;
-                return 0;
             }
             else
             {
-                menuUsuario(userGraph, movieGraph, userId, categoriasPreferidas);
+                menuUsuario(userGraph, movieGraph, userId);
             }
         }
-        else if (opcionPrincipal == 2)
+        else if (opcionPrincipal == 2 && !userId.empty())
         {
-            crearNuevoUsuario(userGraph);
-            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
+            Vertex<Usuario> *currentUserVertex = userGraph.getVertexById(userId);
+            if (currentUserVertex && currentUserVertex->data.rol == ADMIN)
+            {
+                crearNuevoUsuario(userGraph, currentUserVertex->data.rol);
+                guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
+            }
+            else
+            {
+                cout << "No tienes permisos para crear un nuevo usuario." << endl;
+            }
         }
 
     } while (opcionPrincipal != 3);
+
     cout << "Gracias por usar el programa." << endl;
 
     return 0;

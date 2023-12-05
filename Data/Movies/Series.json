@@ -752,7 +752,7 @@
     },
     {
         "actores": [],
-        "calificacion": 0.0,
+        "calificacion": 4.0,
         "categorias": [
             "Terror",
             "Drama"
@@ -760,7 +760,7 @@
         "descripcion": "Un clásico de terror sobre posesión demoníaca dirigido por William Friedkin",
         "duracion": "2h 2m",
         "id": "movie 59",
-        "numCalificaciones": 0,
+        "numCalificaciones": 1,
         "titulo": "The Exorcist"
     },
     {
