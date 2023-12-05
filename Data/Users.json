@@ -100,5 +100,83 @@
             "movie 81"
         ],
         "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "alfredo@example.com",
+        "id": "user10",
+        "nombre": "Alfredo robles",
+        "password": "admin2",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "jose@example.com",
+        "id": "user11",
+        "nombre": "jose maria",
+        "password": "josesito",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [
+            "Acción",
+            "Misterio"
+        ],
+        "correo": "jojo@gmail.com",
+        "id": "user12",
+        "nombre": "mojo jojo",
+        "password": "admin",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "jiji@gmail.com",
+        "id": "user13",
+        "nombre": "jiji",
+        "password": "admin",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [
+            "Comedia",
+            "Terror",
+            "Aventura",
+            "Misterio"
+        ],
+        "correo": "lamalapasuat@gmail.com",
+        "id": "user14",
+        "nombre": "pato suati",
+        "password": "ejemplo",
+        "preferencias": [
+            "movie 6",
+            "movie 17",
+            "movie 20",
+            "movie 34",
+            "movie 36",
+            "movie 97"
+        ],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "cristian@gmail.com",
+        "id": "user15",
+        "nombre": "cristian rojas",
+        "password": "crist123",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "valeria@gmail.com",
+        "id": "user16",
+        "nombre": "valeria pineda",
+        "password": "valeria",
+        "preferencias": [],
+        "rol": "ADMIN"
     }
 ]

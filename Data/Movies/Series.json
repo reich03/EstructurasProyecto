@@ -65,7 +65,7 @@
     },
     {
         "actores": [],
-        "calificacion": 0.0,
+        "calificacion": 4.699999809265137,
         "categorias": [
             "Drama",
             "Comedia"
@@ -73,7 +73,7 @@
         "descripcion": "La historia de un hombre con coeficiente intelectual bajo que vive experiencias extraordinarias",
         "duracion": "2h 22m",
         "id": "movie 6",
-        "numCalificaciones": 0,
+        "numCalificaciones": 1,
         "titulo": "Forrest Gump"
     },
     {
@@ -1258,7 +1258,7 @@
     },
     {
         "actores": [],
-        "calificacion": 4.0,
+        "calificacion": 4.599999904632568,
         "categorias": [
             "Musical",
             "Comedia"
@@ -1266,7 +1266,7 @@
         "descripcion": "Un musical de comedia y culto dirigido por Jim Sharman",
         "duracion": "1h 41m",
         "id": "movie 98",
-        "numCalificaciones": 0,
+        "numCalificaciones": 1,
         "titulo": "The Rocky Horror Picture Show"
     },
     {

@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include <set>
 #include <map>
+#include <string>
+#include <vector>
+#include <limits>
 
 using namespace std;
 
@@ -606,20 +609,20 @@ void mostrarCategorias()
     cout << "16. Misterio" << endl;
 }
 
-void crearNuevoUsuario(Graph<Usuario> &userGraph, RolUsuario rolUsuarioCreando)
+void crearNuevoUsuario(Graph<Usuario> &userGraph, RolUsuario rolPorDefecto, bool esAdmin)
 {
     Usuario newUser;
     cout << "Crear nuevo usuario" << endl;
     cout << "Ingrese su nombre: ";
-    cin >> newUser.nombre;
+    getline(cin >> ws, newUser.nombre);
     cout << "Ingrese su correo electrónico: ";
-    cin >> newUser.correo;
+    getline(cin, newUser.correo);
     cout << "Ingrese su contraseña: ";
-    cin >> newUser.password;
+    getline(cin, newUser.password);
     newUser.id = "user" + to_string(userGraph.vertexList.size() + 1);
     newUser.preferencias = vector<string>();
 
-    if (rolUsuarioCreando == ADMIN)
+    if (esAdmin)
     {
         cout << "Seleccione el rol para el nuevo usuario (1 para ADMIN, 2 para USER): ";
         int rolSeleccionado;
@@ -628,10 +631,10 @@ void crearNuevoUsuario(Graph<Usuario> &userGraph, RolUsuario rolUsuarioCreando)
     }
     else
     {
-        newUser.rol = USER;
+        newUser.rol = rolPorDefecto;
     }
 
-    if (newUser.rol == USER)
+    if (!esAdmin)
     {
         mostrarCategorias();
         cout << "¿Cuántas categorías te interesan? ";
@@ -653,19 +656,46 @@ void crearNuevoUsuario(Graph<Usuario> &userGraph, RolUsuario rolUsuarioCreando)
     cout << "Usuario creado exitosamente. Su ID es: " << newUser.id << endl;
 }
 
-void mostrarMenu(RolUsuario rol)
+void mostrarMenu(RolUsuario rolUsuario)
 {
     cout << "1. Ver mis preferencias" << endl;
     cout << "2. Calificar películas de mi interés" << endl;
     cout << "3. Mostrar películas recomendadas" << endl;
     cout << "4. Actualizar mi información" << endl;
-    if (rol == ADMIN)
+    if (rolUsuario == ADMIN)
     {
-        cout << "6. Administrar películas" << endl;
-        cout << "7. Agregar usuario" << endl;
+        cout << "5. Agregar/Borrar películas" << endl;
+        cout << "6. Crear nuevo usuario" << endl;
     }
-    cout << "5. Salir" << endl;
+    cout << "7. Salir" << endl;
     cout << "Elige una opción: ";
+}
+
+void administrarPeliculas(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph)
+{
+    cout << "Administración de Películas" << endl;
+    cout << "1. Agregar nueva película" << endl;
+    cout << "2. Eliminar película existente" << endl;
+    cout << "3. Regresar al menú principal" << endl;
+    cout << "Elige una opción: ";
+
+    int opcionAdmin;
+    cin >> opcionAdmin;
+
+    switch (opcionAdmin)
+    {
+    case 1:
+        // agregarPelicula(movieGraph);
+        break;
+    case 2:
+        // eliminarPelicula(movieGraph);
+        break;
+    case 3:
+        // Regresar al menú principal
+        break;
+    default:
+        cout << "Opción no válida." << endl;
+    }
 }
 
 void menuUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, const string &userId)
@@ -700,9 +730,6 @@ void menuUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, co
         case 2:
             calificarPeliculaPreferida(userGraph, movieGraph, userId);
             guardarPeliculasEnJSON(movieGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Movies/Series.json");
-
-            break;
-
             break;
         case 3:
             mostrarPeliculasRecomendadas(userGraph, movieGraph, userId);
@@ -713,25 +740,26 @@ void menuUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, co
             guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
             break;
         case 5:
-            cout << "Saliendo del programa." << endl;
-            break;
-        case 6:
             if (user.rol == ADMIN)
             {
-                // Llamar función para administrar películas
+                // administrarPeliculas(userGraph, movieGraph);
+                break;
+            case 6:
+                if (user.rol == ADMIN)
+                {
+                    crearNuevoUsuario(userGraph, ADMIN, true);
+                    guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
+                }
+                break;
+            case 7:
+                cout << "Saliendo del programa." << endl;
+                break;
+            default:
+                cout << "Opción no válida." << endl;
             }
-            break;
-        case 7:
-            if (user.rol == ADMIN)
-            {
-                // Llamar función para agregar usuarios
-            }
-        default:
-            cout << "Opción no válida." << endl;
         }
-    } while (opcion != 5);
+    } while (opcion != 7);
 }
-
 void menuPrincipal()
 {
     cout << "1. Iniciar sesión" << endl;
@@ -739,6 +767,7 @@ void menuPrincipal()
     cout << "3. Salir" << endl;
     cout << "Elige una opción: ";
 }
+
 int main()
 {
     Graph<Usuario> userGraph;
@@ -756,7 +785,7 @@ int main()
 
     do
     {
-        limpiarPantalla();
+        // limpiarPantalla();
         menuPrincipal();
         cin >> opcionPrincipal;
 
@@ -777,18 +806,20 @@ int main()
                 menuUsuario(userGraph, movieGraph, userId);
             }
         }
-        else if (opcionPrincipal == 2 && !userId.empty())
+        else if (opcionPrincipal == 2)
         {
-            Vertex<Usuario> *currentUserVertex = userGraph.getVertexById(userId);
-            if (currentUserVertex && currentUserVertex->data.rol == ADMIN)
+            bool esAdmin = false;
+            if (!userId.empty())
             {
-                crearNuevoUsuario(userGraph, currentUserVertex->data.rol);
-                guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
+                Vertex<Usuario> *currentUserVertex = userGraph.getVertexById(userId);
+                if (currentUserVertex && currentUserVertex->data.rol == ADMIN)
+                {
+                    esAdmin = true;
+                }
             }
-            else
-            {
-                cout << "No tienes permisos para crear un nuevo usuario." << endl;
-            }
+            crearNuevoUsuario(userGraph, USER, esAdmin);
+            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
+            userId = "";
         }
 
     } while (opcionPrincipal != 3);
