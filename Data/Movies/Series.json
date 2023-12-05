@@ -1,703 +1,1298 @@
 [
-  {
-    "id": "movie 1",
-    "titulo": "Inception",
-    "descripcion": "Una película de ficción",
-    "duracion": "2h 28m",
-    "categorias": ["Sci-fi", "Thriller"]
-  },
-  {
-    "id": "movie 2",
-    "titulo": "The Shawshank Redemption",
-    "descripcion": "Un drama carcelario basado en la novela de Stephen King",
-    "duracion": "2h 22m",
-    "categorias": ["Drama"]
-  },
-  {
-    "id": "movie 3",
-    "titulo": "The Dark Knight",
-    "descripcion": "Una película de superhéroes dirigida por Christopher Nolan",
-    "duracion": "2h 32m",
-    "categorias": ["Acción", "Drama"]
-  },
-  {
-    "id": "movie 4",
-    "titulo": "Interstellar",
-    "descripcion": "Una odisea espacial con elementos de ciencia ficción",
-    "duracion": "2h 49m",
-    "categorias": ["Sci-fi", "Aventura"]
-  },
-  {
-    "id": "movie 5",
-    "titulo": "Pulp Fiction",
-    "descripcion": "Un filme de Quentin Tarantino con múltiples tramas entrelazadas",
-    "duracion": "2h 34m",
-    "categorias": ["Crimen", "Drama"]
-  },
-  {
-    "id": "movie 6",
-    "titulo": "Forrest Gump",
-    "descripcion": "La historia de un hombre con coeficiente intelectual bajo que vive experiencias extraordinarias",
-    "duracion": "2h 22m",
-    "categorias": ["Drama", "Comedia"]
-  },
-  {
-    "id": "movie 7",
-    "titulo": "The Matrix",
-    "descripcion": "Un viaje de ciencia ficción que explora la realidad virtual",
-    "duracion": "2h 16m",
-    "categorias": ["Sci-fi", "Acción"]
-  },
-  {
-    "id": "movie 8",
-    "titulo": "Schindler's List",
-    "descripcion": "Un drama histórico sobre un empresario que salva a judíos durante el Holocausto",
-    "duracion": "3h 15m",
-    "categorias": ["Drama", "Historia"]
-  },
-  {
-    "id": "movie 9",
-    "titulo": "The Godfather",
-    "descripcion": "Un clásico sobre la mafia dirigido por Francis Ford Coppola",
-    "duracion": "2h 55m",
-    "categorias": ["Crimen", "Drama"]
-  },
-  {
-    "id": "movie 10",
-    "titulo": "Titanic",
-    "descripcion": "Un épico romance dirigido por James Cameron",
-    "duracion": "3h 14m",
-    "categorias": ["Romance", "Drama"]
-  },
-  {
-    "id": "movie 11",
-    "titulo": "Inglourious Basterds",
-    "descripcion": "Una historia alternativa de la Segunda Guerra Mundial dirigida por Quentin Tarantino",
-    "duracion": "2h 33m",
-    "categorias": ["Drama", "Bélica"]
-  },
-  {
-    "id": "movie 12",
-    "titulo": "The Silence of the Lambs",
-    "descripcion": "Un thriller psicológico sobre un agente del FBI y un asesino en serie",
-    "duracion": "1h 58m",
-    "categorias": ["Thriller", "Crimen"]
-  },
-  {
-    "id": "movie 13",
-    "titulo": "The Lord of the Rings: The Fellowship of the Ring",
-    "descripcion": "La primera entrega de la trilogía épica de fantasía dirigida por Peter Jackson",
-    "duracion": "2h 58m",
-    "categorias": ["Fantasía", "Aventura"]
-  },
-  {
-    "id": "movie 14",
-    "titulo": "Fight Club",
-    "descripcion": "Un drama psicológico sobre la alienación y la rebeldía",
-    "duracion": "2h 19m",
-    "categorias": ["Drama", "Thriller"]
-  },
-  {
-    "id": "movie 15",
-    "titulo": "The Departed",
-    "descripcion": "Un thriller policial dirigido por Martin Scorsese",
-    "duracion": "2h 31m",
-    "categorias": ["Crimen", "Thriller"]
-  },
-  {
-    "id": "movie 16",
-    "titulo": "The Social Network",
-    "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
-    "duracion": "2h 0m",
-    "categorias": ["Drama", "Biografía"]
-  },
-  {
-    "id": "movie 17",
-    "titulo": "The Shining",
-    "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
-    "duracion": "2h 26m",
-    "categorias": ["Terror", "Drama"]
-  },
-  {
-    "id": "movie 18",
-    "titulo": "Casablanca",
-    "descripcion": "Un clásico romántico ambientado durante la Segunda Guerra Mundial",
-    "duracion": "1h 42m",
-    "categorias": ["Romance", "Drama"]
-  },
-  {
-    "id": "movie 19",
-    "titulo": "Goodfellas",
-    "descripcion": "Un drama criminal dirigido por Martin Scorsese",
-    "duracion": "2h 26m",
-    "categorias": ["Crimen", "Drama"]
-  },
-  {
-    "id": "movie 20",
-    "titulo": "Avatar",
-    "descripcion": "Una épica de ciencia ficción dirigida por James Cameron",
-    "duracion": "2h 42m",
-    "categorias": ["Sci-fi", "Aventura"]
-  },
-  {
-    "id": "movie 21",
-    "titulo": "The Usual Suspects",
-    "descripcion": "Un thriller policial con giros inesperados",
-    "duracion": "1h 46m",
-    "categorias": ["Thriller", "Crimen"]
-  },
-  {
-    "id": "movie 22",
-    "titulo": "Gladiator",
-    "descripcion": "Un épico histórico sobre un general romano en busca de venganza",
-    "duracion": "2h 35m",
-    "categorias": ["Acción", "Drama"]
-  },
-  {
-    "id": "movie 23",
-    "titulo": "The Green Mile",
-    "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
-    "duracion": "3h 9m",
-    "categorias": ["Drama", "Fantasía"]
-  },
-  {
-    "id": "movie 24",
-    "titulo": "The Godfather: Part II",
-    "descripcion": "La secuela del clásico dirigida por Francis Ford Coppola",
-    "duracion": "3h 22m",
-    "categorias": ["Crimen", "Drama"]
-  },
-  {
-    "id": "movie 25",
-    "titulo": "The Wolf of Wall Street",
-    "descripcion": "Un drama biográfico sobre un corredor de bolsa corrupto",
-    "duracion": "3h 0m",
-    "categorias": ["Biografía", "Comedia"]
-  },
-  {
-    "id": "movie 26",
-    "titulo": "The Grand Budapest Hotel",
-    "descripcion": "Una comedia dramática dirigida por Wes Anderson",
-    "duracion": "1h 39m",
-    "categorias": ["Comedia", "Drama"]
-  },
-  {
-    "id": "movie 27",
-    "titulo": "Eternal Sunshine of the Spotless Mind",
-    "descripcion": "Una historia de amor surrealista dirigida por Michel Gondry",
-    "duracion": "1h 48m",
-    "categorias": ["Romance", "Sci-fi"]
-  },
-  {
-    "id": "movie 28",
-    "titulo": "The Princess Bride",
-    "descripcion": "Una película de aventuras y fantasía con romance",
-    "duracion": "1h 38m",
-    "categorias": ["Aventura", "Fantasía"]
-  },
-  {
-    "id": "movie 29",
-    "titulo": "No Country for Old Men",
-    "descripcion": "Un thriller criminal basado en la novela de Cormac McCarthy",
-    "duracion": "2h 2m",
-    "categorias": ["Thriller", "Crimen"]
-  },
-  {
-    "id": "movie 30",
-    "titulo": "Amélie",
-    "descripcion": "Una comedia romántica francesa dirigida por Jean-Pierre Jeunet",
-    "duracion": "2h 2m",
-    "categorias": ["Romance", "Comedia"]
-  },
-  {
-    "id": "movie 31",
-    "titulo": "Blade Runner",
-    "descripcion": "Un clásico de ciencia ficción dirigido por Ridley Scott",
-    "duracion": "1h 57m",
-    "categorias": ["Sci-fi", "Noir"]
-  },
-  {
-    "id": "movie 32",
-    "titulo": "The Big Lebowski",
-    "descripcion": "Una comedia absurda de los hermanos Coen",
-    "duracion": "1h 57m",
-    "categorias": ["Comedia", "Crimen"]
-  },
-  {
-    "id": "movie 33",
-    "titulo": "La La Land",
-    "descripcion": "Un musical romántico dirigido por Damien Chazelle",
-    "duracion": "2h 8m",
-    "categorias": ["Musical", "Romance"]
-  },
-  {
-    "id": "movie 34",
-    "titulo": "The Revenant",
-    "descripcion": "Un épico de aventuras y supervivencia dirigido por Alejandro González Iñárritu",
-    "duracion": "2h 36m",
-    "categorias": ["Aventura", "Drama"]
-  },
-  {
-    "id": "movie 35",
-    "titulo": "Memento",
-    "descripcion": "Un thriller psicológico con una estructura narrativa única",
-    "duracion": "1h 53m",
-    "categorias": ["Thriller", "Misterio"]
-  },
-  {
-    "id": "movie 36",
-    "titulo": "The Truman Show",
-    "descripcion": "Una comedia dramática sobre la vida televisada dirigida por Peter Weir",
-    "duracion": "1h 43m",
-    "categorias": ["Comedia", "Drama"]
-  },
-  {
-    "id": "movie 37",
-    "titulo": "A Clockwork Orange",
-    "descripcion": "Una película de ciencia ficción distópica dirigida por Stanley Kubrick",
-    "duracion": "2h 16m",
-    "categorias": ["Sci-fi", "Drama"]
-  },
-  {
-    "id": "movie 38",
-    "titulo": "Casino Royale",
-    "descripcion": "Una película de James Bond dirigida por Martin Campbell",
-    "duracion": "2h 24m",
-    "categorias": ["Acción", "Aventura"]
-  },
-  {
-    "id": "movie 39",
-    "titulo": "Good Will Hunting",
-    "descripcion": "Un drama sobre un joven genio matemático dirigido por Gus Van Sant",
-    "duracion": "2h 6m",
-    "categorias": ["Drama"]
-  },
-  {
-    "id": "movie 40",
-    "titulo": "The Prestige",
-    "descripcion": "Un thriller de magia dirigido por Christopher Nolan",
-    "duracion": "2h 10m",
-    "categorias": ["Misterio", "Drama"]
-  },
-  {
-    "id": "movie 41",
-    "titulo": "The Social Network",
-    "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
-    "duracion": "2h 0m",
-    "categorias": ["Drama", "Biografía"]
-  },
-  {
-    "id": "movie 42",
-    "titulo": "Birdman",
-    "descripcion": "Una comedia negra sobre un actor en decadencia dirigida por Alejandro González Iñárritu",
-    "duracion": "1h 59m",
-    "categorias": ["Comedia", "Drama"]
-  },
-  {
-    "id": "movie 43",
-    "titulo": "Jurassic Park",
-    "descripcion": "Un clásico de aventuras y ciencia ficción dirigido por Steven Spielberg",
-    "duracion": "2h 7m",
-    "categorias": ["Aventura", "Sci-fi"]
-  },
-  {
-    "id": "movie 44",
-    "titulo": "A Beautiful Mind",
-    "descripcion": "Un drama biográfico sobre el matemático John Nash",
-    "duracion": "2h 15m",
-    "categorias": ["Biografía", "Drama"]
-  },
-  {
-    "id": "movie 45",
-    "titulo": "The Big Short",
-    "descripcion": "Un drama sobre la crisis financiera dirigido por Adam McKay",
-    "duracion": "2h 10m",
-    "categorias": ["Drama", "Comedia"]
-  },
-  {
-    "id": "movie 46",
-    "titulo": "The Fifth Element",
-    "descripcion": "Una película de ciencia ficción y aventuras dirigida por Luc Besson",
-    "duracion": "2h 6m",
-    "categorias": ["Sci-fi", "Aventura"]
-  },
-  {
-    "id": "movie 47",
-    "titulo": "Groundhog Day",
-    "descripcion": "Una comedia romántica sobre la repetición del mismo día dirigida por Harold Ramis",
-    "duracion": "1h 41m",
-    "categorias": ["Comedia", "Romance"]
-  },
-  {
-    "id": "movie 48",
-    "titulo": "The Bourne Identity",
-    "descripcion": "Un thriller de espionaje dirigido por Doug Liman",
-    "duracion": "1h 59m",
-    "categorias": ["Acción", "Thriller"]
-  },
-  {
-    "id": "movie 49",
-    "titulo": "Fargo",
-    "descripcion": "Un thriller criminal y comedia negra de los hermanos Coen",
-    "duracion": "1h 38m",
-    "categorias": ["Crimen", "Comedia"]
-  },
-  {
-    "id": "movie 50",
-    "titulo": "The Martian",
-    "descripcion": "Un drama de supervivencia en Marte dirigido por Ridley Scott",
-    "duracion": "2h 24m",
-    "categorias": ["Sci-fi", "Aventura"]
-  },
-  {
-      "id": "movie 51",
-      "titulo": "The Incredibles",
-      "descripcion": "Una película de animación y superhéroes dirigida por Brad Bird",
-      "duracion": "1h 55m",
-      "categorias": ["Animación", "Aventura"]
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Thriller"
+        ],
+        "descripcion": "Una película de ficción",
+        "duracion": "2h 28m",
+        "id": "movie 1",
+        "numCalificaciones": 0,
+        "titulo": "Inception"
     },
     {
-      "id": "movie 52",
-      "titulo": "The Shawshank Redemption",
-      "descripcion": "Un drama carcelario basado en la novela de Stephen King",
-      "duracion": "2h 22m",
-      "categorias": ["Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama"
+        ],
+        "descripcion": "Un drama carcelario basado en la novela de Stephen King",
+        "duracion": "2h 22m",
+        "id": "movie 2",
+        "numCalificaciones": 0,
+        "titulo": "The Shawshank Redemption"
     },
     {
-      "id": "movie 53",
-      "titulo": "The Terminator",
-      "descripcion": "Un clásico de ciencia ficción y acción dirigido por James Cameron",
-      "duracion": "1h 47m",
-      "categorias": ["Sci-fi", "Acción"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Acción",
+            "Drama"
+        ],
+        "descripcion": "Una película de superhéroes dirigida por Christopher Nolan",
+        "duracion": "2h 32m",
+        "id": "movie 3",
+        "numCalificaciones": 0,
+        "titulo": "The Dark Knight"
     },
     {
-      "id": "movie 54",
-      "titulo": "Pan's Labyrinth",
-      "descripcion": "Un cuento oscuro y fantástico dirigido por Guillermo del Toro",
-      "duracion": "1h 58m",
-      "categorias": ["Fantasía", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Aventura"
+        ],
+        "descripcion": "Una odisea espacial con elementos de ciencia ficción",
+        "duracion": "2h 49m",
+        "id": "movie 4",
+        "numCalificaciones": 0,
+        "titulo": "Interstellar"
     },
     {
-      "id": "movie 55",
-      "titulo": "The Sixth Sense",
-      "descripcion": "Un thriller psicológico con giros sorprendentes dirigido por M. Night Shyamalan",
-      "duracion": "1h 47m",
-      "categorias": ["Thriller", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Drama"
+        ],
+        "descripcion": "Un filme de Quentin Tarantino con múltiples tramas entrelazadas",
+        "duracion": "2h 34m",
+        "id": "movie 5",
+        "numCalificaciones": 0,
+        "titulo": "Pulp Fiction"
     },
     {
-      "id": "movie 56",
-      "titulo": "Raiders of the Lost Ark",
-      "descripcion": "La primera aventura de Indiana Jones dirigida por Steven Spielberg",
-      "duracion": "1h 55m",
-      "categorias": ["Aventura", "Acción"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Comedia"
+        ],
+        "descripcion": "La historia de un hombre con coeficiente intelectual bajo que vive experiencias extraordinarias",
+        "duracion": "2h 22m",
+        "id": "movie 6",
+        "numCalificaciones": 0,
+        "titulo": "Forrest Gump"
     },
     {
-      "id": "movie 57",
-      "titulo": "The Untouchables",
-      "descripcion": "Un thriller policial sobre la lucha contra la mafia dirigido por Brian De Palma",
-      "duracion": "1h 59m",
-      "categorias": ["Crimen", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Acción"
+        ],
+        "descripcion": "Un viaje de ciencia ficción que explora la realidad virtual",
+        "duracion": "2h 16m",
+        "id": "movie 7",
+        "numCalificaciones": 0,
+        "titulo": "The Matrix"
     },
     {
-      "id": "movie 58",
-      "titulo": "The Breakfast Club",
-      "descripcion": "Un clásico del cine adolescente dirigido por John Hughes",
-      "duracion": "1h 37m",
-      "categorias": ["Drama", "Comedia"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Historia"
+        ],
+        "descripcion": "Un drama histórico sobre un empresario que salva a judíos durante el Holocausto",
+        "duracion": "3h 15m",
+        "id": "movie 8",
+        "numCalificaciones": 0,
+        "titulo": "Schindler's List"
     },
     {
-      "id": "movie 59",
-      "titulo": "The Exorcist",
-      "descripcion": "Un clásico de terror sobre posesión demoníaca dirigido por William Friedkin",
-      "duracion": "2h 2m",
-      "categorias": ["Terror", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Drama"
+        ],
+        "descripcion": "Un clásico sobre la mafia dirigido por Francis Ford Coppola",
+        "duracion": "2h 55m",
+        "id": "movie 9",
+        "numCalificaciones": 0,
+        "titulo": "The Godfather"
     },
     {
-      "id": "movie 60",
-      "titulo": "The Big Short",
-      "descripcion": "Un drama sobre la crisis financiera dirigido por Adam McKay",
-      "duracion": "2h 10m",
-      "categorias": ["Drama", "Comedia"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Romance",
+            "Drama"
+        ],
+        "descripcion": "Un épico romance dirigido por James Cameron",
+        "duracion": "3h 14m",
+        "id": "movie 10",
+        "numCalificaciones": 0,
+        "titulo": "Titanic"
     },
     {
-      "id": "movie 61",
-      "titulo": "The French Connection",
-      "descripcion": "Un thriller policial clásico dirigido por William Friedkin",
-      "duracion": "1h 44m",
-      "categorias": ["Crimen", "Thriller"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Bélica"
+        ],
+        "descripcion": "Una historia alternativa de la Segunda Guerra Mundial dirigida por Quentin Tarantino",
+        "duracion": "2h 33m",
+        "id": "movie 11",
+        "numCalificaciones": 0,
+        "titulo": "Inglourious Basterds"
     },
     {
-      "id": "movie 62",
-      "titulo": "The Life Aquatic with Steve Zissou",
-      "descripcion": "Una comedia dramática dirigida por Wes Anderson",
-      "duracion": "1h 59m",
-      "categorias": ["Comedia", "Aventura"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Thriller",
+            "Crimen"
+        ],
+        "descripcion": "Un thriller psicológico sobre un agente del FBI y un asesino en serie",
+        "duracion": "1h 58m",
+        "id": "movie 12",
+        "numCalificaciones": 0,
+        "titulo": "The Silence of the Lambs"
     },
     {
-      "id": "movie 63",
-      "titulo": "The Graduate",
-      "descripcion": "Un clásico de la comedia dramática dirigido por Mike Nichols",
-      "duracion": "1h 46m",
-      "categorias": ["Drama", "Comedia"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Fantasía",
+            "Aventura"
+        ],
+        "descripcion": "La primera entrega de la trilogía épica de fantasía dirigida por Peter Jackson",
+        "duracion": "2h 58m",
+        "id": "movie 13",
+        "numCalificaciones": 0,
+        "titulo": "The Lord of the Rings: The Fellowship of the Ring"
     },
     {
-      "id": "movie 64",
-      "titulo": "The Green Mile",
-      "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
-      "duracion": "3h 9m",
-      "categorias": ["Drama", "Fantasía"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Thriller"
+        ],
+        "descripcion": "Un drama psicológico sobre la alienación y la rebeldía",
+        "duracion": "2h 19m",
+        "id": "movie 14",
+        "numCalificaciones": 0,
+        "titulo": "Fight Club"
     },
     {
-      "id": "movie 65",
-      "titulo": "The Deer Hunter",
-      "descripcion": "Un drama sobre la Guerra de Vietnam dirigido por Michael Cimino",
-      "duracion": "3h 2m",
-      "categorias": ["Drama", "Bélica"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Thriller"
+        ],
+        "descripcion": "Un thriller policial dirigido por Martin Scorsese",
+        "duracion": "2h 31m",
+        "id": "movie 15",
+        "numCalificaciones": 0,
+        "titulo": "The Departed"
     },
     {
-      "id": "movie 66",
-      "titulo": "The Wizard of Oz",
-      "descripcion": "Un clásico musical y de fantasía dirigido por Victor Fleming",
-      "duracion": "1h 42m",
-      "categorias": ["Musical", "Fantasía"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Biografía"
+        ],
+        "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
+        "duracion": "2h 0m",
+        "id": "movie 16",
+        "numCalificaciones": 0,
+        "titulo": "The Social Network"
     },
     {
-      "id": "movie 67",
-      "titulo": "The Maltese Falcon",
-      "descripcion": "Un clásico del cine negro dirigido por John Huston",
-      "duracion": "1h 40m",
-      "categorias": ["Crimen", "Misterio"]
+        "actores": [],
+        "calificacion": 4.599999904632568,
+        "categorias": [
+            "Terror",
+            "Drama"
+        ],
+        "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
+        "duracion": "2h 26m",
+        "id": "movie 17",
+        "numCalificaciones": 2,
+        "titulo": "The Shining"
     },
     {
-      "id": "movie 68",
-      "titulo": "The Social Network",
-      "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
-      "duracion": "2h 0m",
-      "categorias": ["Drama", "Biografía"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Romance",
+            "Drama"
+        ],
+        "descripcion": "Un clásico romántico ambientado durante la Segunda Guerra Mundial",
+        "duracion": "1h 42m",
+        "id": "movie 18",
+        "numCalificaciones": 0,
+        "titulo": "Casablanca"
     },
     {
-      "id": "movie 69",
-      "titulo": "The Great Gatsby",
-      "descripcion": "Una adaptación del clásico literario dirigida por Baz Luhrmann",
-      "duracion": "2h 23m",
-      "categorias": ["Drama", "Romance"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Drama"
+        ],
+        "descripcion": "Un drama criminal dirigido por Martin Scorsese",
+        "duracion": "2h 26m",
+        "id": "movie 19",
+        "numCalificaciones": 0,
+        "titulo": "Goodfellas"
     },
     {
-      "id": "movie 70",
-      "titulo": "The Usual Suspects",
-      "descripcion": "Un thriller policial con giros inesperados",
-      "duracion": "1h 46m",
-      "categorias": ["Thriller", "Crimen"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Aventura"
+        ],
+        "descripcion": "Una épica de ciencia ficción dirigida por James Cameron",
+        "duracion": "2h 42m",
+        "id": "movie 20",
+        "numCalificaciones": 0,
+        "titulo": "Avatar"
     },
     {
-      "id": "movie 71",
-      "titulo": "The Terminator 2: Judgment Day",
-      "descripcion": "La secuela de la clásica película de ciencia ficción dirigida por James Cameron",
-      "duracion": "2h 17m",
-      "categorias": ["Sci-fi", "Acción"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Thriller",
+            "Crimen"
+        ],
+        "descripcion": "Un thriller policial con giros inesperados",
+        "duracion": "1h 46m",
+        "id": "movie 21",
+        "numCalificaciones": 0,
+        "titulo": "The Usual Suspects"
     },
     {
-      "id": "movie 72",
-      "titulo": "The Thing",
-      "descripcion": "Un thriller de ciencia ficción y horror dirigido por John Carpenter",
-      "duracion": "1h 49m",
-      "categorias": ["Sci-fi", "Terror"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Acción",
+            "Drama"
+        ],
+        "descripcion": "Un épico histórico sobre un general romano en busca de venganza",
+        "duracion": "2h 35m",
+        "id": "movie 22",
+        "numCalificaciones": 0,
+        "titulo": "Gladiator"
     },
     {
-      "id": "movie 73",
-      "titulo": "The Rocky Horror Picture Show",
-      "descripcion": "Un musical de comedia y culto dirigido por Jim Sharman",
-      "duracion": "1h 41m",
-      "categorias": ["Musical", "Comedia"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Fantasía"
+        ],
+        "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
+        "duracion": "3h 9m",
+        "id": "movie 23",
+        "numCalificaciones": 0,
+        "titulo": "The Green Mile"
     },
     {
-      "id": "movie 74",
-      "titulo": "The Bridge on the River Kwai",
-      "descripcion": "Un clásico bélico dirigido por David Lean",
-      "duracion": "2h 41m",
-      "categorias": ["Bélica", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Drama"
+        ],
+        "descripcion": "La secuela del clásico dirigida por Francis Ford Coppola",
+        "duracion": "3h 22m",
+        "id": "movie 24",
+        "numCalificaciones": 0,
+        "titulo": "The Godfather: Part II"
     },
     {
-      "id": "movie 75",
-      "titulo": "The Shining",
-      "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
-      "duracion": "2h 26m",
-      "categorias": ["Terror", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Biografía",
+            "Comedia"
+        ],
+        "descripcion": "Un drama biográfico sobre un corredor de bolsa corrupto",
+        "duracion": "3h 0m",
+        "id": "movie 25",
+        "numCalificaciones": 0,
+        "titulo": "The Wolf of Wall Street"
     },
     {
-      "id": "movie 51",
-      "titulo": "The Incredibles",
-      "descripcion": "Una película de animación y superhéroes dirigida por Brad Bird",
-      "duracion": "1h 55m",
-      "categorias": ["Animación", "Aventura"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Comedia",
+            "Drama"
+        ],
+        "descripcion": "Una comedia dramática dirigida por Wes Anderson",
+        "duracion": "1h 39m",
+        "id": "movie 26",
+        "numCalificaciones": 0,
+        "titulo": "The Grand Budapest Hotel"
     },
     {
-      "id": "movie 52",
-      "titulo": "The Shawshank Redemption",
-      "descripcion": "Un drama carcelario basado en la novela de Stephen King",
-      "duracion": "2h 22m",
-      "categorias": ["Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Romance",
+            "Sci-fi"
+        ],
+        "descripcion": "Una historia de amor surrealista dirigida por Michel Gondry",
+        "duracion": "1h 48m",
+        "id": "movie 27",
+        "numCalificaciones": 0,
+        "titulo": "Eternal Sunshine of the Spotless Mind"
     },
     {
-      "id": "movie 53",
-      "titulo": "The Terminator",
-      "descripcion": "Un clásico de ciencia ficción y acción dirigido por James Cameron",
-      "duracion": "1h 47m",
-      "categorias": ["Sci-fi", "Acción"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Aventura",
+            "Fantasía"
+        ],
+        "descripcion": "Una película de aventuras y fantasía con romance",
+        "duracion": "1h 38m",
+        "id": "movie 28",
+        "numCalificaciones": 0,
+        "titulo": "The Princess Bride"
     },
     {
-      "id": "movie 54",
-      "titulo": "Pan's Labyrinth",
-      "descripcion": "Un cuento oscuro y fantástico dirigido por Guillermo del Toro",
-      "duracion": "1h 58m",
-      "categorias": ["Fantasía", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Thriller",
+            "Crimen"
+        ],
+        "descripcion": "Un thriller criminal basado en la novela de Cormac McCarthy",
+        "duracion": "2h 2m",
+        "id": "movie 29",
+        "numCalificaciones": 0,
+        "titulo": "No Country for Old Men"
     },
     {
-      "id": "movie 55",
-      "titulo": "The Sixth Sense",
-      "descripcion": "Un thriller psicológico con giros sorprendentes dirigido por M. Night Shyamalan",
-      "duracion": "1h 47m",
-      "categorias": ["Thriller", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Romance",
+            "Comedia"
+        ],
+        "descripcion": "Una comedia romántica francesa dirigida por Jean-Pierre Jeunet",
+        "duracion": "2h 2m",
+        "id": "movie 30",
+        "numCalificaciones": 0,
+        "titulo": "Amélie"
     },
     {
-      "id": "movie 56",
-      "titulo": "Raiders of the Lost Ark",
-      "descripcion": "La primera aventura de Indiana Jones dirigida por Steven Spielberg",
-      "duracion": "1h 55m",
-      "categorias": ["Aventura", "Acción"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Noir"
+        ],
+        "descripcion": "Un clásico de ciencia ficción dirigido por Ridley Scott",
+        "duracion": "1h 57m",
+        "id": "movie 31",
+        "numCalificaciones": 0,
+        "titulo": "Blade Runner"
     },
     {
-      "id": "movie 57",
-      "titulo": "The Untouchables",
-      "descripcion": "Un thriller policial sobre la lucha contra la mafia dirigido por Brian De Palma",
-      "duracion": "1h 59m",
-      "categorias": ["Crimen", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Comedia",
+            "Crimen"
+        ],
+        "descripcion": "Una comedia absurda de los hermanos Coen",
+        "duracion": "1h 57m",
+        "id": "movie 32",
+        "numCalificaciones": 0,
+        "titulo": "The Big Lebowski"
     },
     {
-      "id": "movie 58",
-      "titulo": "The Breakfast Club",
-      "descripcion": "Un clásico del cine adolescente dirigido por John Hughes",
-      "duracion": "1h 37m",
-      "categorias": ["Drama", "Comedia"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Musical",
+            "Romance"
+        ],
+        "descripcion": "Un musical romántico dirigido por Damien Chazelle",
+        "duracion": "2h 8m",
+        "id": "movie 33",
+        "numCalificaciones": 0,
+        "titulo": "La La Land"
     },
     {
-      "id": "movie 59",
-      "titulo": "The Exorcist",
-      "descripcion": "Un clásico de terror sobre posesión demoníaca dirigido por William Friedkin",
-      "duracion": "2h 2m",
-      "categorias": ["Terror", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Aventura",
+            "Drama"
+        ],
+        "descripcion": "Un épico de aventuras y supervivencia dirigido por Alejandro González Iñárritu",
+        "duracion": "2h 36m",
+        "id": "movie 34",
+        "numCalificaciones": 0,
+        "titulo": "The Revenant"
     },
     {
-      "id": "movie 60",
-      "titulo": "The Big Short",
-      "descripcion": "Un drama sobre la crisis financiera dirigido por Adam McKay",
-      "duracion": "2h 10m",
-      "categorias": ["Drama", "Comedia"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Thriller",
+            "Misterio"
+        ],
+        "descripcion": "Un thriller psicológico con una estructura narrativa única",
+        "duracion": "1h 53m",
+        "id": "movie 35",
+        "numCalificaciones": 0,
+        "titulo": "Memento"
     },
     {
-      "id": "movie 61",
-      "titulo": "The French Connection",
-      "descripcion": "Un thriller policial clásico dirigido por William Friedkin",
-      "duracion": "1h 44m",
-      "categorias": ["Crimen", "Thriller"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Comedia",
+            "Drama"
+        ],
+        "descripcion": "Una comedia dramática sobre la vida televisada dirigida por Peter Weir",
+        "duracion": "1h 43m",
+        "id": "movie 36",
+        "numCalificaciones": 0,
+        "titulo": "The Truman Show"
     },
     {
-      "id": "movie 62",
-      "titulo": "The Life Aquatic with Steve Zissou",
-      "descripcion": "Una comedia dramática dirigida por Wes Anderson",
-      "duracion": "1h 59m",
-      "categorias": ["Comedia", "Aventura"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Drama"
+        ],
+        "descripcion": "Una película de ciencia ficción distópica dirigida por Stanley Kubrick",
+        "duracion": "2h 16m",
+        "id": "movie 37",
+        "numCalificaciones": 0,
+        "titulo": "A Clockwork Orange"
     },
     {
-      "id": "movie 63",
-      "titulo": "The Graduate",
-      "descripcion": "Un clásico de la comedia dramática dirigido por Mike Nichols",
-      "duracion": "1h 46m",
-      "categorias": ["Drama", "Comedia"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Acción",
+            "Aventura"
+        ],
+        "descripcion": "Una película de James Bond dirigida por Martin Campbell",
+        "duracion": "2h 24m",
+        "id": "movie 38",
+        "numCalificaciones": 0,
+        "titulo": "Casino Royale"
     },
     {
-      "id": "movie 64",
-      "titulo": "The Green Mile",
-      "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
-      "duracion": "3h 9m",
-      "categorias": ["Drama", "Fantasía"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama"
+        ],
+        "descripcion": "Un drama sobre un joven genio matemático dirigido por Gus Van Sant",
+        "duracion": "2h 6m",
+        "id": "movie 39",
+        "numCalificaciones": 0,
+        "titulo": "Good Will Hunting"
     },
     {
-      "id": "movie 65",
-      "titulo": "The Deer Hunter",
-      "descripcion": "Un drama sobre la Guerra de Vietnam dirigido por Michael Cimino",
-      "duracion": "3h 2m",
-      "categorias": ["Drama", "Bélica"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Misterio",
+            "Drama"
+        ],
+        "descripcion": "Un thriller de magia dirigido por Christopher Nolan",
+        "duracion": "2h 10m",
+        "id": "movie 40",
+        "numCalificaciones": 0,
+        "titulo": "The Prestige"
     },
     {
-      "id": "movie 66",
-      "titulo": "The Wizard of Oz",
-      "descripcion": "Un clásico musical y de fantasía dirigido por Victor Fleming",
-      "duracion": "1h 42m",
-      "categorias": ["Musical", "Fantasía"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Biografía"
+        ],
+        "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
+        "duracion": "2h 0m",
+        "id": "movie 41",
+        "numCalificaciones": 0,
+        "titulo": "The Social Network"
     },
     {
-      "id": "movie 67",
-      "titulo": "The Maltese Falcon",
-      "descripcion": "Un clásico del cine negro dirigido por John Huston",
-      "duracion": "1h 40m",
-      "categorias": ["Crimen", "Misterio"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Comedia",
+            "Drama"
+        ],
+        "descripcion": "Una comedia negra sobre un actor en decadencia dirigida por Alejandro González Iñárritu",
+        "duracion": "1h 59m",
+        "id": "movie 42",
+        "numCalificaciones": 0,
+        "titulo": "Birdman"
     },
     {
-      "id": "movie 68",
-      "titulo": "The Social Network",
-      "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
-      "duracion": "2h 0m",
-      "categorias": ["Drama", "Biografía"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Aventura",
+            "Sci-fi"
+        ],
+        "descripcion": "Un clásico de aventuras y ciencia ficción dirigido por Steven Spielberg",
+        "duracion": "2h 7m",
+        "id": "movie 43",
+        "numCalificaciones": 0,
+        "titulo": "Jurassic Park"
     },
     {
-      "id": "movie 69",
-      "titulo": "The Great Gatsby",
-      "descripcion": "Una adaptación del clásico literario dirigida por Baz Luhrmann",
-      "duracion": "2h 23m",
-      "categorias": ["Drama", "Romance"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Biografía",
+            "Drama"
+        ],
+        "descripcion": "Un drama biográfico sobre el matemático John Nash",
+        "duracion": "2h 15m",
+        "id": "movie 44",
+        "numCalificaciones": 0,
+        "titulo": "A Beautiful Mind"
     },
     {
-      "id": "movie 70",
-      "titulo": "The Usual Suspects",
-      "descripcion": "Un thriller policial con giros inesperados",
-      "duracion": "1h 46m",
-      "categorias": ["Thriller", "Crimen"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Comedia"
+        ],
+        "descripcion": "Un drama sobre la crisis financiera dirigido por Adam McKay",
+        "duracion": "2h 10m",
+        "id": "movie 45",
+        "numCalificaciones": 0,
+        "titulo": "The Big Short"
     },
     {
-      "id": "movie 71",
-      "titulo": "The Terminator 2: Judgment Day",
-      "descripcion": "La secuela de la clásica película de ciencia ficción dirigida por James Cameron",
-      "duracion": "2h 17m",
-      "categorias": ["Sci-fi", "Acción"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Aventura"
+        ],
+        "descripcion": "Una película de ciencia ficción y aventuras dirigida por Luc Besson",
+        "duracion": "2h 6m",
+        "id": "movie 46",
+        "numCalificaciones": 0,
+        "titulo": "The Fifth Element"
     },
     {
-      "id": "movie 72",
-      "titulo": "The Thing",
-      "descripcion": "Un thriller de ciencia ficción y horror dirigido por John Carpenter",
-      "duracion": "1h 49m",
-      "categorias": ["Sci-fi", "Terror"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Comedia",
+            "Romance"
+        ],
+        "descripcion": "Una comedia romántica sobre la repetición del mismo día dirigida por Harold Ramis",
+        "duracion": "1h 41m",
+        "id": "movie 47",
+        "numCalificaciones": 0,
+        "titulo": "Groundhog Day"
     },
     {
-      "id": "movie 73",
-      "titulo": "The Rocky Horror Picture Show",
-      "descripcion": "Un musical de comedia y culto dirigido por Jim Sharman",
-      "duracion": "1h 41m",
-      "categorias": ["Musical", "Comedia"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Acción",
+            "Thriller"
+        ],
+        "descripcion": "Un thriller de espionaje dirigido por Doug Liman",
+        "duracion": "1h 59m",
+        "id": "movie 48",
+        "numCalificaciones": 0,
+        "titulo": "The Bourne Identity"
     },
     {
-      "id": "movie 74",
-      "titulo": "The Bridge on the River Kwai",
-      "descripcion": "Un clásico bélico dirigido por David Lean",
-      "duracion": "2h 41m",
-      "categorias": ["Bélica", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Comedia"
+        ],
+        "descripcion": "Un thriller criminal y comedia negra de los hermanos Coen",
+        "duracion": "1h 38m",
+        "id": "movie 49",
+        "numCalificaciones": 0,
+        "titulo": "Fargo"
     },
     {
-      "id": "movie 75",
-      "titulo": "The Shining",
-      "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
-      "duracion": "2h 26m",
-      "categorias": ["Terror", "Drama"]
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Aventura"
+        ],
+        "descripcion": "Un drama de supervivencia en Marte dirigido por Ridley Scott",
+        "duracion": "2h 24m",
+        "id": "movie 50",
+        "numCalificaciones": 0,
+        "titulo": "The Martian"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Animación",
+            "Aventura"
+        ],
+        "descripcion": "Una película de animación y superhéroes dirigida por Brad Bird",
+        "duracion": "1h 55m",
+        "id": "movie 51",
+        "numCalificaciones": 0,
+        "titulo": "The Incredibles"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama"
+        ],
+        "descripcion": "Un drama carcelario basado en la novela de Stephen King",
+        "duracion": "2h 22m",
+        "id": "movie 52",
+        "numCalificaciones": 0,
+        "titulo": "The Shawshank Redemption"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Acción"
+        ],
+        "descripcion": "Un clásico de ciencia ficción y acción dirigido por James Cameron",
+        "duracion": "1h 47m",
+        "id": "movie 53",
+        "numCalificaciones": 0,
+        "titulo": "The Terminator"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Fantasía",
+            "Drama"
+        ],
+        "descripcion": "Un cuento oscuro y fantástico dirigido por Guillermo del Toro",
+        "duracion": "1h 58m",
+        "id": "movie 54",
+        "numCalificaciones": 0,
+        "titulo": "Pan's Labyrinth"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Thriller",
+            "Drama"
+        ],
+        "descripcion": "Un thriller psicológico con giros sorprendentes dirigido por M. Night Shyamalan",
+        "duracion": "1h 47m",
+        "id": "movie 55",
+        "numCalificaciones": 0,
+        "titulo": "The Sixth Sense"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Aventura",
+            "Acción"
+        ],
+        "descripcion": "La primera aventura de Indiana Jones dirigida por Steven Spielberg",
+        "duracion": "1h 55m",
+        "id": "movie 56",
+        "numCalificaciones": 0,
+        "titulo": "Raiders of the Lost Ark"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Drama"
+        ],
+        "descripcion": "Un thriller policial sobre la lucha contra la mafia dirigido por Brian De Palma",
+        "duracion": "1h 59m",
+        "id": "movie 57",
+        "numCalificaciones": 0,
+        "titulo": "The Untouchables"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Comedia"
+        ],
+        "descripcion": "Un clásico del cine adolescente dirigido por John Hughes",
+        "duracion": "1h 37m",
+        "id": "movie 58",
+        "numCalificaciones": 0,
+        "titulo": "The Breakfast Club"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Terror",
+            "Drama"
+        ],
+        "descripcion": "Un clásico de terror sobre posesión demoníaca dirigido por William Friedkin",
+        "duracion": "2h 2m",
+        "id": "movie 59",
+        "numCalificaciones": 0,
+        "titulo": "The Exorcist"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Comedia"
+        ],
+        "descripcion": "Un drama sobre la crisis financiera dirigido por Adam McKay",
+        "duracion": "2h 10m",
+        "id": "movie 60",
+        "numCalificaciones": 0,
+        "titulo": "The Big Short"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Thriller"
+        ],
+        "descripcion": "Un thriller policial clásico dirigido por William Friedkin",
+        "duracion": "1h 44m",
+        "id": "movie 61",
+        "numCalificaciones": 0,
+        "titulo": "The French Connection"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Comedia",
+            "Aventura"
+        ],
+        "descripcion": "Una comedia dramática dirigida por Wes Anderson",
+        "duracion": "1h 59m",
+        "id": "movie 62",
+        "numCalificaciones": 0,
+        "titulo": "The Life Aquatic with Steve Zissou"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Comedia"
+        ],
+        "descripcion": "Un clásico de la comedia dramática dirigido por Mike Nichols",
+        "duracion": "1h 46m",
+        "id": "movie 63",
+        "numCalificaciones": 0,
+        "titulo": "The Graduate"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Fantasía"
+        ],
+        "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
+        "duracion": "3h 9m",
+        "id": "movie 64",
+        "numCalificaciones": 0,
+        "titulo": "The Green Mile"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Bélica"
+        ],
+        "descripcion": "Un drama sobre la Guerra de Vietnam dirigido por Michael Cimino",
+        "duracion": "3h 2m",
+        "id": "movie 65",
+        "numCalificaciones": 0,
+        "titulo": "The Deer Hunter"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Musical",
+            "Fantasía"
+        ],
+        "descripcion": "Un clásico musical y de fantasía dirigido por Victor Fleming",
+        "duracion": "1h 42m",
+        "id": "movie 66",
+        "numCalificaciones": 0,
+        "titulo": "The Wizard of Oz"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Misterio"
+        ],
+        "descripcion": "Un clásico del cine negro dirigido por John Huston",
+        "duracion": "1h 40m",
+        "id": "movie 67",
+        "numCalificaciones": 0,
+        "titulo": "The Maltese Falcon"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Biografía"
+        ],
+        "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
+        "duracion": "2h 0m",
+        "id": "movie 68",
+        "numCalificaciones": 0,
+        "titulo": "The Social Network"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Romance"
+        ],
+        "descripcion": "Una adaptación del clásico literario dirigida por Baz Luhrmann",
+        "duracion": "2h 23m",
+        "id": "movie 69",
+        "numCalificaciones": 0,
+        "titulo": "The Great Gatsby"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Thriller",
+            "Crimen"
+        ],
+        "descripcion": "Un thriller policial con giros inesperados",
+        "duracion": "1h 46m",
+        "id": "movie 70",
+        "numCalificaciones": 0,
+        "titulo": "The Usual Suspects"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Acción"
+        ],
+        "descripcion": "La secuela de la clásica película de ciencia ficción dirigida por James Cameron",
+        "duracion": "2h 17m",
+        "id": "movie 71",
+        "numCalificaciones": 0,
+        "titulo": "The Terminator 2: Judgment Day"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Terror"
+        ],
+        "descripcion": "Un thriller de ciencia ficción y horror dirigido por John Carpenter",
+        "duracion": "1h 49m",
+        "id": "movie 72",
+        "numCalificaciones": 0,
+        "titulo": "The Thing"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Musical",
+            "Comedia"
+        ],
+        "descripcion": "Un musical de comedia y culto dirigido por Jim Sharman",
+        "duracion": "1h 41m",
+        "id": "movie 73",
+        "numCalificaciones": 0,
+        "titulo": "The Rocky Horror Picture Show"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Bélica",
+            "Drama"
+        ],
+        "descripcion": "Un clásico bélico dirigido por David Lean",
+        "duracion": "2h 41m",
+        "id": "movie 74",
+        "numCalificaciones": 0,
+        "titulo": "The Bridge on the River Kwai"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Terror",
+            "Drama"
+        ],
+        "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
+        "duracion": "2h 26m",
+        "id": "movie 75",
+        "numCalificaciones": 0,
+        "titulo": "The Shining"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Animación",
+            "Aventura"
+        ],
+        "descripcion": "Una película de animación y superhéroes dirigida por Brad Bird",
+        "duracion": "1h 55m",
+        "id": "movie 76",
+        "numCalificaciones": 0,
+        "titulo": "The Incredibles"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama"
+        ],
+        "descripcion": "Un drama carcelario basado en la novela de Stephen King",
+        "duracion": "2h 22m",
+        "id": "movie 77",
+        "numCalificaciones": 0,
+        "titulo": "The Shawshank Redemption"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Acción"
+        ],
+        "descripcion": "Un clásico de ciencia ficción y acción dirigido por James Cameron",
+        "duracion": "1h 47m",
+        "id": "movie 78",
+        "numCalificaciones": 0,
+        "titulo": "The Terminator"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Fantasía",
+            "Drama"
+        ],
+        "descripcion": "Un cuento oscuro y fantástico dirigido por Guillermo del Toro",
+        "duracion": "1h 58m",
+        "id": "movie 79",
+        "numCalificaciones": 0,
+        "titulo": "Pan's Labyrinth"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Thriller",
+            "Drama"
+        ],
+        "descripcion": "Un thriller psicológico con giros sorprendentes dirigido por M. Night Shyamalan",
+        "duracion": "1h 47m",
+        "id": "movie 80",
+        "numCalificaciones": 0,
+        "titulo": "The Sixth Sense"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Aventura",
+            "Acción"
+        ],
+        "descripcion": "La primera aventura de Indiana Jones dirigida por Steven Spielberg",
+        "duracion": "1h 55m",
+        "id": "movie 81",
+        "numCalificaciones": 0,
+        "titulo": "Raiders of the Lost Ark"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Drama"
+        ],
+        "descripcion": "Un thriller policial sobre la lucha contra la mafia dirigido por Brian De Palma",
+        "duracion": "1h 59m",
+        "id": "movie 82",
+        "numCalificaciones": 0,
+        "titulo": "The Untouchables"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Comedia"
+        ],
+        "descripcion": "Un clásico del cine adolescente dirigido por John Hughes",
+        "duracion": "1h 37m",
+        "id": "movie 83",
+        "numCalificaciones": 0,
+        "titulo": "The Breakfast Club"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Terror",
+            "Drama"
+        ],
+        "descripcion": "Un clásico de terror sobre posesión demoníaca dirigido por William Friedkin",
+        "duracion": "2h 2m",
+        "id": "movie 84",
+        "numCalificaciones": 0,
+        "titulo": "The Exorcist"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Comedia"
+        ],
+        "descripcion": "Un drama sobre la crisis financiera dirigido por Adam McKay",
+        "duracion": "2h 10m",
+        "id": "movie 85",
+        "numCalificaciones": 0,
+        "titulo": "The Big Short"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Thriller"
+        ],
+        "descripcion": "Un thriller policial clásico dirigido por William Friedkin",
+        "duracion": "1h 44m",
+        "id": "movie 86",
+        "numCalificaciones": 0,
+        "titulo": "The French Connection"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Comedia",
+            "Aventura"
+        ],
+        "descripcion": "Una comedia dramática dirigida por Wes Anderson",
+        "duracion": "1h 59m",
+        "id": "movie 87",
+        "numCalificaciones": 0,
+        "titulo": "The Life Aquatic with Steve Zissou"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Comedia"
+        ],
+        "descripcion": "Un clásico de la comedia dramática dirigido por Mike Nichols",
+        "duracion": "1h 46m",
+        "id": "movie 88",
+        "numCalificaciones": 0,
+        "titulo": "The Graduate"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Fantasía"
+        ],
+        "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
+        "duracion": "3h 9m",
+        "id": "movie 89",
+        "numCalificaciones": 0,
+        "titulo": "The Green Mile"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Bélica"
+        ],
+        "descripcion": "Un drama sobre la Guerra de Vietnam dirigido por Michael Cimino",
+        "duracion": "3h 2m",
+        "id": "movie 90",
+        "numCalificaciones": 0,
+        "titulo": "The Deer Hunter"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Musical",
+            "Fantasía"
+        ],
+        "descripcion": "Un clásico musical y de fantasía dirigido por Victor Fleming",
+        "duracion": "1h 42m",
+        "id": "movie 91",
+        "numCalificaciones": 0,
+        "titulo": "The Wizard of Oz"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Crimen",
+            "Misterio"
+        ],
+        "descripcion": "Un clásico del cine negro dirigido por John Huston",
+        "duracion": "1h 40m",
+        "id": "movie 92",
+        "numCalificaciones": 0,
+        "titulo": "The Maltese Falcon"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Biografía"
+        ],
+        "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
+        "duracion": "2h 0m",
+        "id": "movie 93",
+        "numCalificaciones": 0,
+        "titulo": "The Social Network"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Drama",
+            "Romance"
+        ],
+        "descripcion": "Una adaptación del clásico literario dirigida por Baz Luhrmann",
+        "duracion": "2h 23m",
+        "id": "movie 94",
+        "numCalificaciones": 0,
+        "titulo": "The Great Gatsby"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Thriller",
+            "Crimen"
+        ],
+        "descripcion": "Un thriller policial con giros inesperados",
+        "duracion": "1h 46m",
+        "id": "movie 95",
+        "numCalificaciones": 0,
+        "titulo": "The Usual Suspects"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Sci-fi",
+            "Acción"
+        ],
+        "descripcion": "La secuela de la clásica película de ciencia ficción dirigida por James Cameron",
+        "duracion": "2h 17m",
+        "id": "movie 96",
+        "numCalificaciones": 0,
+        "titulo": "The Terminator 2: Judgment Day"
+    },
+    {
+        "actores": [],
+        "calificacion": 4.0,
+        "categorias": [
+            "Sci-fi",
+            "Terror"
+        ],
+        "descripcion": "Un thriller de ciencia ficción y horror dirigido por John Carpenter",
+        "duracion": "1h 49m",
+        "id": "movie 97",
+        "numCalificaciones": 0,
+        "titulo": "The Thing"
+    },
+    {
+        "actores": [],
+        "calificacion": 4.0,
+        "categorias": [
+            "Musical",
+            "Comedia"
+        ],
+        "descripcion": "Un musical de comedia y culto dirigido por Jim Sharman",
+        "duracion": "1h 41m",
+        "id": "movie 98",
+        "numCalificaciones": 0,
+        "titulo": "The Rocky Horror Picture Show"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Bélica",
+            "Drama"
+        ],
+        "descripcion": "Un clásico bélico dirigido por David Lean",
+        "duracion": "2h 41m",
+        "id": "movie 99",
+        "numCalificaciones": 0,
+        "titulo": "The Bridge on the River Kwai"
+    },
+    {
+        "actores": [],
+        "calificacion": 0.0,
+        "categorias": [
+            "Terror",
+            "Drama"
+        ],
+        "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
+        "duracion": "2h 26m",
+        "id": "movie 100",
+        "numCalificaciones": 0,
+        "titulo": "The Shining"
     }
-
 ]

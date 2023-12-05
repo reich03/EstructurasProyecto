@@ -2,8 +2,71 @@
 #include <fstream>
 #include "Graph.cpp"
 #include "DataStructures.h"
+#include <cstdlib>
+#include <set>
+#include <map>
+
 using namespace std;
 
+enum Categoria
+{
+    ACCION,
+    COMEDIA,
+    DRAMA,
+    TERROR,
+    CIENCIA_FICCION,
+    DOCUMENTAL,
+    ANIMACION,
+    AVENTURA,
+    BELICA,
+    ROMANCE,
+    CRIMEN,
+    THRILLER,
+    FANTASIA,
+    BIOGRAFIA,
+    MUSICAL,
+    MISTERIO
+};
+
+string categoriaToString(Categoria categoria)
+{
+    switch (categoria)
+    {
+    case ACCION:
+        return "Acción";
+    case COMEDIA:
+        return "Comedia";
+    case DRAMA:
+        return "Drama";
+    case TERROR:
+        return "Terror";
+    case CIENCIA_FICCION:
+        return "Sci-fi";
+    case DOCUMENTAL:
+        return "Documental";
+    case ANIMACION:
+        return "Animacion";
+    case BELICA:
+        return "Bélica";
+    case CRIMEN:
+        return "Crimen";
+    case ROMANCE:
+        return "Romance";
+    case AVENTURA:
+        return "Aventura";
+    case THRILLER:
+        return "Thriller";
+    case FANTASIA:
+        return "Fantasía";
+    case BIOGRAFIA:
+        return "Biografia";
+    case MUSICAL:
+        return "Musical";
+    case MISTERIO:
+        return "Misterio";
+    }
+    return "";
+}
 // cargar data del json al constructor de los struct
 void cargarUsuariosDesdeJSON(Graph<Usuario> &userGraph, const string &archivo)
 {
@@ -19,6 +82,8 @@ void cargarUsuariosDesdeJSON(Graph<Usuario> &userGraph, const string &archivo)
         user.correo = j.at("correo").get<string>();
         user.password = j.at("password").get<string>();
         j.at("preferencias").get_to(user.preferencias);
+        j.at("categoriasInteres").get_to(user.categoriasInteres);
+
         userGraph.addVertex(user);
     }
 }
@@ -30,14 +95,37 @@ void cargarPeliculasDesdeJSON(Graph<PeliculaSerie> &movieGraph, const string &ar
 
     for (const auto &j : jsonPeliculas)
     {
-        PeliculaSerie peliculas;
-        peliculas.id = j.at("id").get<string>();
-        peliculas.titulo = j.at("titulo").get<string>();
-        peliculas.descripcion = j.at("descripcion").get<string>();
-        peliculas.duracion = j.at("duracion").get<string>();
-        j.at("categorias").get_to(peliculas.categorias);
+        PeliculaSerie pelicula;
+        pelicula.id = j.at("id").get<string>();
+        pelicula.titulo = j.at("titulo").get<string>();
+        pelicula.descripcion = j.at("descripcion").get<string>();
+        pelicula.duracion = j.at("duracion").get<string>();
+        j.at("categorias").get_to(pelicula.categorias);
 
-        movieGraph.addVertex(peliculas);
+        if (j.find("actores") != j.end())
+        {
+            j.at("actores").get_to(pelicula.actores);
+        }
+
+        if (j.find("calificacion") != j.end())
+        {
+            pelicula.calificacion = j.at("calificacion").get<float>();
+        }
+        else
+        {
+            pelicula.calificacion = 0.0;
+        }
+
+        if (j.find("numCalificaciones") != j.end())
+        {
+            pelicula.numCalificaciones = j.at("numCalificaciones").get<int>();
+        }
+        else
+        {
+            pelicula.numCalificaciones = 0;
+        }
+
+        movieGraph.addVertex(pelicula);
     }
 }
 
@@ -53,7 +141,6 @@ void encontrarPreferenciasDeUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSer
 
     Usuario user = userVertex->data;
     cout << "Preferencias de " << user.nombre << ":" << endl;
-
     for (const auto &movieId : user.preferencias)
     {
         Vertex<PeliculaSerie> *movieVertex = movieGraph.getVertexById(movieId);
@@ -64,6 +151,16 @@ void encontrarPreferenciasDeUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSer
     }
 }
 
+void limpiarPantalla()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+// bool que me compara entre las peliculas para definir si tienen una categoria comun entre estas
 bool compartenCategoria(const PeliculaSerie &pelicula1, const PeliculaSerie &pelicula2)
 {
     for (const auto &categoria1 : pelicula1.categorias)
@@ -138,6 +235,8 @@ void imprimirGrafoPeliculas(const Graph<PeliculaSerie> &movieGraph)
     }
 }
 
+/*Funcion para al momento de loguearse definir que user es y si es retorne su id, para manejarlo y poder usarlo en la aplicacion*/
+
 string verificarUsuario(const Graph<Usuario> &userGraph, const string &correo, const string &password)
 {
     for (int i = 0; i < userGraph.vertexList.size(); i++)
@@ -151,6 +250,7 @@ string verificarUsuario(const Graph<Usuario> &userGraph, const string &correo, c
     return ""; // Retorna una cadena vacía si no se encuentra el usuario
 }
 
+// definir categorias de interes y escribirlas
 void elegirCategoriasDeInteres(vector<string> &categoriasPreferidas)
 {
     int numCategorias;
@@ -167,6 +267,7 @@ void elegirCategoriasDeInteres(vector<string> &categoriasPreferidas)
     }
 }
 
+// Funcion para definir si el correo ingresado no esta repetido
 bool esCorreoUnico(const Graph<Usuario> &userGraph, const string &correo, const string &userIdExcluido)
 {
     for (int i = 0; i < userGraph.vertexList.size(); i++)
@@ -180,6 +281,57 @@ bool esCorreoUnico(const Graph<Usuario> &userGraph, const string &correo, const 
     return true;
 }
 
+void mostrarCategoriasDisponibles()
+{
+    cout << "Categorías disponibles:" << endl;
+    for (int i = ACCION; i <= MISTERIO; i++)
+    {
+        cout << i + 1 << ". " << categoriaToString(static_cast<Categoria>(i)) << endl;
+    }
+}
+
+Categoria obtenerCategoriaPorIndice(int indice)
+{
+    switch (indice)
+    {
+    case 1:
+        return ACCION;
+    case 2:
+        return COMEDIA;
+    case 3:
+        return DRAMA;
+    case 4:
+        return TERROR;
+    case 5:
+        return CIENCIA_FICCION;
+    case 6:
+        return DOCUMENTAL;
+    case 7:
+        return ANIMACION;
+    case 8:
+        return BELICA;
+    case 9:
+        return CRIMEN;
+    case 10:
+        return ROMANCE;
+    case 11:
+        return AVENTURA;
+    case 12:
+        return THRILLER;
+    case 13:
+        return FANTASIA;
+    case 14:
+        return BIOGRAFIA;
+    case 15:
+        return MUSICAL;
+    case 16:
+        return MISTERIO;
+    default:
+        return ACCION;
+    }
+}
+
+// Actualizar informacion del usuario
 void actualizarInformacionUsuario(Graph<Usuario> &userGraph, const string &userId)
 {
     Vertex<Usuario> *userVertex = userGraph.getVertexById(userId);
@@ -191,15 +343,11 @@ void actualizarInformacionUsuario(Graph<Usuario> &userGraph, const string &userI
 
     Usuario &user = userVertex->data;
     cout << "Actualizar información para " << user.nombre << ":" << endl;
-
-    // Actualizar nombre
     cout << "Nuevo nombre (deja en blanco para mantener el actual): ";
     string nuevoNombre;
     getline(cin >> ws, nuevoNombre);
     if (!nuevoNombre.empty())
         user.nombre = nuevoNombre;
-
-    // Actualizar correo
     string nuevoCorreo;
     do
     {
@@ -212,13 +360,59 @@ void actualizarInformacionUsuario(Graph<Usuario> &userGraph, const string &userI
     } while (!nuevoCorreo.empty() && !esCorreoUnico(userGraph, nuevoCorreo, user.id));
     if (!nuevoCorreo.empty())
         user.correo = nuevoCorreo;
-
-    // Actualizar contraseña
     cout << "Nueva contraseña (deja en blanco para mantener la actual): ";
     string nuevaPassword;
     getline(cin >> ws, nuevaPassword);
     if (!nuevaPassword.empty())
         user.password = nuevaPassword;
+    int actualizarCategorias;
+    cout << "¿Deseas actualizar tus categorías de interés? (1 = sí, 0 = no): ";
+    cin >> actualizarCategorias;
+    if (actualizarCategorias)
+    {
+        cout << "Tus categorías de interés actuales son: " << endl;
+        for (const auto &categoria : user.categoriasInteres)
+        {
+            cout << " - " << categoria << endl;
+        }
+
+        mostrarCategoriasDisponibles();
+        cout << "Ingresa los números de las categorías que deseas agregar (0 para terminar): ";
+        int indiceCategoria;
+        while (true)
+        {
+            cin >> indiceCategoria;
+            if (indiceCategoria == 0)
+                break;
+            Categoria categoria = obtenerCategoriaPorIndice(indiceCategoria);
+            string strCategoria = categoriaToString(categoria);
+            if (find(user.categoriasInteres.begin(), user.categoriasInteres.end(), strCategoria) == user.categoriasInteres.end())
+            {
+                user.categoriasInteres.push_back(strCategoria);
+            }
+        }
+
+        cout << "¿Deseas eliminar alguna categoría? (1 = sí, 0 = no): ";
+        int eliminarCategoria;
+        cin >> eliminarCategoria;
+        if (eliminarCategoria)
+        {
+            cout << "Ingresa los números de las categorías que deseas eliminar (0 para terminar): ";
+            while (true)
+            {
+                cin >> indiceCategoria;
+                if (indiceCategoria == 0)
+                    break;
+                Categoria categoria = obtenerCategoriaPorIndice(indiceCategoria);
+                string strCategoria = categoriaToString(categoria);
+                auto it = find(user.categoriasInteres.begin(), user.categoriasInteres.end(), strCategoria);
+                if (it != user.categoriasInteres.end())
+                {
+                    user.categoriasInteres.erase(it);
+                }
+            }
+        }
+    }
 }
 
 void agregarPeliculaAPreferencias(Graph<Usuario> &userGraph, const string &userId, const string &movieId)
@@ -238,29 +432,113 @@ void agregarPeliculaAPreferencias(Graph<Usuario> &userGraph, const string &userI
     }
 }
 
-void mostrarPeliculasRecomendadas(Graph<Usuario> &userGraph, const Graph<PeliculaSerie> &movieGraph, const string &userId, const vector<string> &categoriasPreferidas)
+set<string> obtenerActoresFavoritos(Graph<Usuario> &userGraph, const string &userId, Graph<PeliculaSerie> &movieGraph)
 {
-    cout << "Recomendaciones basadas en tus categorías preferidas:" << endl;
+    Vertex<Usuario> *userVertex = userGraph.getVertexById(userId);
+    set<string> actoresFavoritos;
+
+    if (userVertex)
+    {
+        for (const auto &movieId : userVertex->data.preferencias)
+        {
+            Vertex<PeliculaSerie> *movieVertex = movieGraph.getVertexById(movieId);
+            if (movieVertex)
+            {
+                actoresFavoritos.insert(movieVertex->data.actores.begin(), movieVertex->data.actores.end());
+            }
+        }
+    }
+
+    return actoresFavoritos;
+}
+// Funcion para poder mostrar peliculas recomendadas una por una en base a tus gustos de categorias y si te gustan guardarlas en tus preferencias
+void mostrarPeliculasRecomendadas(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, const string &userId)
+{
+    Vertex<Usuario> *userVertex = userGraph.getVertexById(userId);
+    if (!userVertex)
+    {
+        cout << "Usuario no encontrado." << endl;
+        return;
+    }
+
+    const vector<string> &categoriasPreferidas = userVertex->data.categoriasInteres;
+    set<string> actoresFavoritos = obtenerActoresFavoritos(userGraph, userId, movieGraph);
+
+    cout << "Recomendaciones basadas en tus categorías y actores preferidos:" << endl;
     for (int i = 0; i < movieGraph.vertexList.size(); i++)
     {
         PeliculaSerie pelicula = movieGraph.vertexList.get(i)->data;
-        for (const auto &categoria : pelicula.categorias)
+
+        bool coincideCategoria = any_of(categoriasPreferidas.begin(), categoriasPreferidas.end(), [&](const string &categoria)
+                                        { return find(pelicula.categorias.begin(), pelicula.categorias.end(), categoria) != pelicula.categorias.end(); });
+
+        bool coincideActor = actoresFavoritos.empty() || any_of(pelicula.actores.begin(), pelicula.actores.end(), [&](const string &actor)
+                                                                { return actoresFavoritos.find(actor) != actoresFavoritos.end(); });
+
+        if (coincideCategoria && (coincideActor || pelicula.actores.empty()) && (pelicula.calificacion >= 4.0 || pelicula.numCalificaciones == 0))
         {
-            if (find(categoriasPreferidas.begin(), categoriasPreferidas.end(), categoria) != categoriasPreferidas.end())
+
+            cout << " - " << pelicula.titulo << " (ID: " << pelicula.id << ")" << endl;
+            cout << "¿Deseas agregar esta película a tus preferencias? (s/n): ";
+            char respuesta;
+            cin >> respuesta;
+            if (respuesta == 's' || respuesta == 'S')
             {
-                cout << " - " << pelicula.titulo << " (ID: " << pelicula.id << ")" << endl;
-                cout << "¿Deseas agregar esta película a tus preferencias? (s/n): ";
-                char respuesta;
-                cin >> respuesta;
-                if (respuesta == 's' || respuesta == 'S')
-                {
-                    agregarPeliculaAPreferencias(userGraph, userId, pelicula.id);
-                }
-                break;
+                agregarPeliculaAPreferencias(userGraph, userId, pelicula.id);
             }
         }
     }
 }
+
+void calificarPelicula(Graph<PeliculaSerie> &movieGraph, const string &movieId, float calificacionUsuario)
+{
+    Vertex<PeliculaSerie> *movieVertex = movieGraph.getVertexById(movieId);
+    if (movieVertex)
+    {
+        PeliculaSerie &pelicula = movieVertex->data;
+        pelicula.calificacion = (pelicula.calificacion * pelicula.numCalificaciones + calificacionUsuario) / (pelicula.numCalificaciones + 1);
+        pelicula.numCalificaciones++;
+    }
+}
+
+void calificarPeliculaPreferida(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, const string &userId)
+{
+    Vertex<Usuario> *userVertex = userGraph.getVertexById(userId);
+    if (!userVertex)
+    {
+        cout << "Usuario no encontrado." << endl;
+        return;
+    }
+
+    cout << "Selecciona una película de tus preferencias para calificar:" << endl;
+    int i = 1;
+    map<int, string> peliculaMap;
+    for (const auto &movieId : userVertex->data.preferencias)
+    {
+        Vertex<PeliculaSerie> *movieVertex = movieGraph.getVertexById(movieId);
+        if (movieVertex)
+        {
+            cout << i << ". " << movieVertex->data.titulo << endl;
+            peliculaMap[i++] = movieId;
+        }
+    }
+
+    int seleccion;
+    cin >> seleccion;
+    if (peliculaMap.find(seleccion) != peliculaMap.end())
+    {
+        cout << "Ingresa tu calificación (0.0 a 5.0): ";
+        float calificacion;
+        cin >> calificacion;
+        calificarPelicula(movieGraph, peliculaMap[seleccion], calificacion);
+    }
+    else
+    {
+        cout << "Selección inválida." << endl;
+    }
+}
+
+// Funcion para pushear los datos que tenga de mi user en el grafo hacia el objeto del json
 void guardarUsuariosEnJSON(const Graph<Usuario> &userGraph, const string &archivo)
 {
     json jsonUsuarios = json::array();
@@ -273,19 +551,149 @@ void guardarUsuariosEnJSON(const Graph<Usuario> &userGraph, const string &archiv
         jUser["correo"] = user.correo;
         jUser["password"] = user.password;
         jUser["preferencias"] = user.preferencias;
+        jUser["categoriasInteres"] = user.categoriasInteres;
         jsonUsuarios.push_back(jUser);
     }
     std::ofstream file(archivo);
-    file << jsonUsuarios.dump(4);
+    file << jsonUsuarios.dump(5);
+}
+
+void guardarPeliculasEnJSON(const Graph<PeliculaSerie> &movieGraph, const string &archivo)
+{
+    json jsonPeliculas = json::array();
+    for (int i = 0; i < movieGraph.vertexList.size(); i++)
+    {
+        PeliculaSerie pelicula = movieGraph.vertexList.get(i)->data;
+        json jPelicula;
+        jPelicula["id"] = pelicula.id;
+        jPelicula["titulo"] = pelicula.titulo;
+        jPelicula["descripcion"] = pelicula.descripcion;
+        jPelicula["duracion"] = pelicula.duracion;
+        jPelicula["categorias"] = pelicula.categorias;
+        jPelicula["actores"] = pelicula.actores;
+        jPelicula["calificacion"] = pelicula.calificacion;
+        jPelicula["numCalificaciones"] = pelicula.numCalificaciones;
+
+        jsonPeliculas.push_back(jPelicula);
+    }
+    std::ofstream file(archivo);
+    file << jsonPeliculas.dump(4);
+}
+
+void mostrarCategorias()
+{
+    cout << "Categorías disponibles:" << endl;
+    cout << "1. Acción" << endl;
+    cout << "2. Comedia" << endl;
+    cout << "3. Drama" << endl;
+    cout << "4. Terror" << endl;
+    cout << "5. Sci-fi" << endl;
+    cout << "6. Documental" << endl;
+    cout << "7. Animacion" << endl;
+    cout << "8. Bélica" << endl;
+    cout << "9. Crimen" << endl;
+    cout << "10. Romance" << endl;
+    cout << "11. Aventura" << endl;
+    cout << "12. Thriller" << endl;
+    cout << "13. Fantasía" << endl;
+    cout << "14. Biografia" << endl;
+    cout << "15. Musical" << endl;
+    cout << "16. Misterio" << endl;
+}
+
+void crearNuevoUsuario(Graph<Usuario> &userGraph)
+{
+    Usuario newUser;
+    cout << "Crear nuevo usuario" << endl;
+    cout << "Ingrese su nombre: ";
+    cin >> newUser.nombre;
+    cout << "Ingrese su correo electrónico: ";
+    cin >> newUser.correo;
+    cout << "Ingrese su contraseña: ";
+    cin >> newUser.password;
+    newUser.id = "user" + to_string(userGraph.vertexList.size() + 1);
+    newUser.preferencias = vector<string>();
+
+    mostrarCategorias();
+    cout << "¿Cuántas categorías te interesan? ";
+    int numCategorias;
+    cin >> numCategorias;
+
+    newUser.categoriasInteres.clear();
+    for (int i = 0; i < numCategorias; i++)
+    {
+        int indiceCategoria;
+        cout << "Ingresa el número de la categoría " << i + 1 << ": ";
+        cin >> indiceCategoria;
+        Categoria categoria = obtenerCategoriaPorIndice(indiceCategoria);
+        newUser.categoriasInteres.push_back(categoriaToString(categoria));
+    }
+
+    userGraph.addVertex(newUser);
+    cout << "Usuario creado exitosamente. Su ID es: " << newUser.id << endl;
 }
 
 void mostrarMenu()
 {
     cout << "1. Ver mis preferencias" << endl;
-    cout << "2. Elegir categorías de interés" << endl;
+    cout << "2. Calificar peliculas de mi interes" << endl;
     cout << "3. Mostrar películas recomendadas" << endl;
     cout << "4. Actualizar mi información" << endl;
     cout << "5. Salir" << endl;
+    cout << "Elige una opción: ";
+}
+
+void menuUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, const string &userId, vector<string> &categoriasPreferidas)
+{
+
+    int opcion = 0;
+    do
+    {
+        // limpiarPantalla();
+        mostrarMenu();
+        cin >> opcion;
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Entrada inválida. Por favor, ingresa un número." << endl;
+            continue;
+        }
+
+        switch (opcion)
+        {
+        case 1:
+            encontrarPreferenciasDeUsuario(userGraph, movieGraph, userId);
+            break;
+        case 2:
+            calificarPeliculaPreferida(userGraph, movieGraph, userId);
+            guardarPeliculasEnJSON(movieGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Movies/Series.json");
+
+            break;
+
+            break;
+        case 3:
+            mostrarPeliculasRecomendadas(userGraph, movieGraph, userId);
+            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
+            break;
+        case 4:
+            actualizarInformacionUsuario(userGraph, userId);
+            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
+            break;
+        case 5:
+            cout << "Saliendo del programa." << endl;
+            break;
+        default:
+            cout << "Opción no válida." << endl;
+        }
+    } while (opcion != 5);
+}
+
+void menuPrincipal()
+{
+    cout << "1. Iniciar sesión" << endl;
+    cout << "2. Crear nuevo usuario" << endl;
+    cout << "3. Salir" << endl;
     cout << "Elige una opción: ";
 }
 int main()
@@ -301,47 +709,40 @@ int main()
     cargarPeliculasDesdeJSON(movieGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Movies/Series.json");
     enlazarPeliculasPorCategoria(movieGraph);
     string correo, password;
-    cout << "Correo electrónico: ";
-    cin >> correo;
-    cout << "Contraseña: ";
-    cin >> password;
+    int opcionPrincipal;
 
-    // Verificar usuario
-    string userId = verificarUsuario(userGraph, correo, password);
-    if (userId.empty())
-    {
-        cout << "Usuario no encontrado o contraseña incorrecta." << endl;
-        return 0;
-    }
-
-    int opcion;
     do
     {
-        mostrarMenu();
-        cin >> opcion;
-
-        switch (opcion)
+        limpiarPantalla();
+        menuPrincipal();
+        cin >> opcionPrincipal;
+        if (opcionPrincipal == 1)
         {
-        case 1:
-            encontrarPreferenciasDeUsuario(userGraph, movieGraph, userId);
-            break;
-        case 2:
-            elegirCategoriasDeInteres(categoriasPreferidas);
-            break;
-        case 3:
-            mostrarPeliculasRecomendadas(userGraph, movieGraph, userId, categoriasPreferidas);
-            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
-            break;
-        case 4:
-            actualizarInformacionUsuario(userGraph, userId);
-            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
-            break;
-        case 5:
-            cout << "Saliendo del programa." << endl;
-            break;
-        default:
-            cout << "Opción no válida." << endl;
+            cout << "Correo electrónico: ";
+            cin >> correo;
+            cout << "Contraseña: ";
+            cin >> password;
+
+            // Verificar usuario
+            string userId = verificarUsuario(userGraph, correo, password);
+            if (userId.empty())
+            {
+                cout << "Usuario no encontrado o contraseña incorrecta." << endl;
+                return 0;
+            }
+            else
+            {
+                menuUsuario(userGraph, movieGraph, userId, categoriasPreferidas);
+            }
         }
-    } while (opcion != 5);
+        else if (opcionPrincipal == 2)
+        {
+            crearNuevoUsuario(userGraph);
+            guardarUsuariosEnJSON(userGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Users.json");
+        }
+
+    } while (opcionPrincipal != 3);
+    cout << "Gracias por usar el programa." << endl;
+
     return 0;
 }
