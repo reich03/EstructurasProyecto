@@ -1,6 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>chang_passw_admin</class>
  <widget class="QDialog" name="chang_passw_admin">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>

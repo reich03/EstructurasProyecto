@@ -1,6 +1,5 @@
 #include "login.h"
 #include "ui_login.h"
-#include "index_nuser.h"
 #include "categories.h"
 #include "QMessageBox"
 #include "QDebug"

@@ -73,7 +73,7 @@ font: 600 9pt &quot;Sitka Small Semibold&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>591</width>
-     <height>59</height>
+     <height>89</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="top">
@@ -95,6 +95,24 @@ color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(0, 0, 0, 
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="create">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>310</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(0, 0, 0, 255));
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(184, 238, 255, 255));
+font: 900 9pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Create User</string>
+   </property>
   </widget>
  </widget>
  <resources/>
