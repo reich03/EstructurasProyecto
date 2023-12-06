@@ -56,5 +56,6 @@ public:
     Vertex<T> *getVertexById(const string &id);
     void addCategoryEdge(const string &movieId1, const string &movieId2);
     bool aristaExiste(Vertex<T> *fromVertex, Vertex<T> *toVertex);
+    bool removeVertex(const string &vertexId);
 };
 #endif

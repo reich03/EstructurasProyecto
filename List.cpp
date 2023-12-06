@@ -1,6 +1,7 @@
 #ifndef GRAPH_LIST_CPP
 #define GRAPH_LIST_CPP
 #include "List.h"
+
 template <typename T>
 List<T>::List() : begin(0), count(0)
 {
@@ -130,4 +131,6 @@ Node<T> *List<T>::search(const T &value)
         cur = cur->next;
     }
 }
+
+
 #endif

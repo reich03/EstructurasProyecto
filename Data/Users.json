@@ -24,7 +24,9 @@
         "categoriasInteres": [
             "Terror",
             "Animacion",
-            "Musical"
+            "Musical",
+            "Belica",
+            "Fantasia"
         ],
         "correo": "redjhojan0319@gmail.com",
         "id": "user3",
@@ -34,7 +36,8 @@
             "movie 17",
             "movie 33",
             "movie 59",
-            "movie 98"
+            "movie 98",
+            "movie 101"
         ],
         "rol": "ADMIN"
     },
@@ -85,7 +88,7 @@
     },
     {
         "categoriasInteres": [
-            "Acción",
+            "Accion",
             "Documental",
             "Biografia"
         ],
@@ -121,7 +124,7 @@
     },
     {
         "categoriasInteres": [
-            "Acción",
+            "Accion",
             "Misterio"
         ],
         "correo": "jojo@gmail.com",

@@ -13,9 +13,10 @@ template <typename T>
 class List
 {
 private:
-    Node<T> *begin;
     int count;
     Node<T> *makeNode(const T &value);
+
+    Node<T> *begin;
 
 public:
     List();

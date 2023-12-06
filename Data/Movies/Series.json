@@ -28,7 +28,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Acción",
+            "Accion",
             "Drama"
         ],
         "descripcion": "Una película de superhéroes dirigida por Christopher Nolan",
@@ -81,7 +81,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Sci-fi",
-            "Acción"
+            "Accion"
         ],
         "descripcion": "Un viaje de ciencia ficción que explora la realidad virtual",
         "duracion": "2h 16m",
@@ -133,7 +133,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Bélica"
+            "Belica"
         ],
         "descripcion": "Una historia alternativa de la Segunda Guerra Mundial dirigida por Quentin Tarantino",
         "duracion": "2h 33m",
@@ -158,10 +158,10 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Fantasía",
+            "Fantasia",
             "Aventura"
         ],
-        "descripcion": "La primera entrega de la trilogía épica de fantasía dirigida por Peter Jackson",
+        "descripcion": "La primera entrega de la trilogía épica de Fantasia dirigida por Peter Jackson",
         "duracion": "2h 58m",
         "id": "movie 13",
         "numCalificaciones": 0,
@@ -198,7 +198,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Biografía"
+            "Biografia"
         ],
         "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
         "duracion": "2h 0m",
@@ -275,7 +275,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Acción",
+            "Accion",
             "Drama"
         ],
         "descripcion": "Un épico histórico sobre un general romano en busca de venganza",
@@ -289,7 +289,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Fantasía"
+            "Fantasia"
         ],
         "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
         "duracion": "3h 9m",
@@ -314,7 +314,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Biografía",
+            "Biografia",
             "Comedia"
         ],
         "descripcion": "Un drama biográfico sobre un corredor de bolsa corrupto",
@@ -354,9 +354,9 @@
         "calificacion": 0.0,
         "categorias": [
             "Aventura",
-            "Fantasía"
+            "Fantasia"
         ],
-        "descripcion": "Una película de aventuras y fantasía con romance",
+        "descripcion": "Una película de aventuras y Fantasia con romance",
         "duracion": "1h 38m",
         "id": "movie 28",
         "numCalificaciones": 0,
@@ -483,7 +483,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Acción",
+            "Accion",
             "Aventura"
         ],
         "descripcion": "Una película de James Bond dirigida por Martin Campbell",
@@ -522,7 +522,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Biografía"
+            "Biografia"
         ],
         "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
         "duracion": "2h 0m",
@@ -560,7 +560,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Biografía",
+            "Biografia",
             "Drama"
         ],
         "descripcion": "Un drama biográfico sobre el matemático John Nash",
@@ -612,7 +612,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Acción",
+            "Accion",
             "Thriller"
         ],
         "descripcion": "Un thriller de espionaje dirigido por Doug Liman",
@@ -677,9 +677,9 @@
         "calificacion": 0.0,
         "categorias": [
             "Sci-fi",
-            "Acción"
+            "Accion"
         ],
-        "descripcion": "Un clásico de ciencia ficción y acción dirigido por James Cameron",
+        "descripcion": "Un clásico de ciencia ficción y Accion dirigido por James Cameron",
         "duracion": "1h 47m",
         "id": "movie 53",
         "numCalificaciones": 0,
@@ -689,7 +689,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Fantasía",
+            "Fantasia",
             "Drama"
         ],
         "descripcion": "Un cuento oscuro y fantástico dirigido por Guillermo del Toro",
@@ -716,7 +716,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Aventura",
-            "Acción"
+            "Accion"
         ],
         "descripcion": "La primera aventura de Indiana Jones dirigida por Steven Spielberg",
         "duracion": "1h 55m",
@@ -820,7 +820,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Fantasía"
+            "Fantasia"
         ],
         "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
         "duracion": "3h 9m",
@@ -833,7 +833,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Bélica"
+            "Belica"
         ],
         "descripcion": "Un drama sobre la Guerra de Vietnam dirigido por Michael Cimino",
         "duracion": "3h 2m",
@@ -846,9 +846,9 @@
         "calificacion": 0.0,
         "categorias": [
             "Musical",
-            "Fantasía"
+            "Fantasia"
         ],
-        "descripcion": "Un clásico musical y de fantasía dirigido por Victor Fleming",
+        "descripcion": "Un clásico musical y de Fantasia dirigido por Victor Fleming",
         "duracion": "1h 42m",
         "id": "movie 66",
         "numCalificaciones": 0,
@@ -872,7 +872,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Biografía"
+            "Biografia"
         ],
         "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
         "duracion": "2h 0m",
@@ -911,7 +911,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Sci-fi",
-            "Acción"
+            "Accion"
         ],
         "descripcion": "La secuela de la clásica película de ciencia ficción dirigida por James Cameron",
         "duracion": "2h 17m",
@@ -949,7 +949,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Bélica",
+            "Belica",
             "Drama"
         ],
         "descripcion": "Un clásico bélico dirigido por David Lean",
@@ -1001,9 +1001,9 @@
         "calificacion": 0.0,
         "categorias": [
             "Sci-fi",
-            "Acción"
+            "Accion"
         ],
-        "descripcion": "Un clásico de ciencia ficción y acción dirigido por James Cameron",
+        "descripcion": "Un clásico de ciencia ficción y Accion dirigido por James Cameron",
         "duracion": "1h 47m",
         "id": "movie 78",
         "numCalificaciones": 0,
@@ -1013,7 +1013,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Fantasía",
+            "Fantasia",
             "Drama"
         ],
         "descripcion": "Un cuento oscuro y fantástico dirigido por Guillermo del Toro",
@@ -1040,7 +1040,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Aventura",
-            "Acción"
+            "Accion"
         ],
         "descripcion": "La primera aventura de Indiana Jones dirigida por Steven Spielberg",
         "duracion": "1h 55m",
@@ -1144,7 +1144,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Fantasía"
+            "Fantasia"
         ],
         "descripcion": "Un drama sobrenatural basado en una novela de Stephen King",
         "duracion": "3h 9m",
@@ -1157,7 +1157,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Bélica"
+            "Belica"
         ],
         "descripcion": "Un drama sobre la Guerra de Vietnam dirigido por Michael Cimino",
         "duracion": "3h 2m",
@@ -1170,9 +1170,9 @@
         "calificacion": 0.0,
         "categorias": [
             "Musical",
-            "Fantasía"
+            "Fantasia"
         ],
-        "descripcion": "Un clásico musical y de fantasía dirigido por Victor Fleming",
+        "descripcion": "Un clásico musical y de Fantasia dirigido por Victor Fleming",
         "duracion": "1h 42m",
         "id": "movie 91",
         "numCalificaciones": 0,
@@ -1196,7 +1196,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Drama",
-            "Biografía"
+            "Biografia"
         ],
         "descripcion": "La historia del surgimiento de Facebook dirigida por David Fincher",
         "duracion": "2h 0m",
@@ -1235,7 +1235,7 @@
         "calificacion": 0.0,
         "categorias": [
             "Sci-fi",
-            "Acción"
+            "Accion"
         ],
         "descripcion": "La secuela de la clásica película de ciencia ficción dirigida por James Cameron",
         "duracion": "2h 17m",
@@ -1273,7 +1273,7 @@
         "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Bélica",
+            "Belica",
             "Drama"
         ],
         "descripcion": "Un clásico bélico dirigido por David Lean",

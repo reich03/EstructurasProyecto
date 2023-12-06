@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <limits>
+#include <sstream>
 
 using namespace std;
 
@@ -36,7 +37,7 @@ string categoriaToString(Categoria categoria)
     switch (categoria)
     {
     case ACCION:
-        return "Acción";
+        return "Accion";
     case COMEDIA:
         return "Comedia";
     case DRAMA:
@@ -50,7 +51,7 @@ string categoriaToString(Categoria categoria)
     case ANIMACION:
         return "Animacion";
     case BELICA:
-        return "Bélica";
+        return "Belica";
     case CRIMEN:
         return "Crimen";
     case ROMANCE:
@@ -60,7 +61,7 @@ string categoriaToString(Categoria categoria)
     case THRILLER:
         return "Thriller";
     case FANTASIA:
-        return "Fantasía";
+        return "Fantasia";
     case BIOGRAFIA:
         return "Biografia";
     case MUSICAL:
@@ -182,6 +183,15 @@ bool compartenCategoria(const PeliculaSerie &pelicula1, const PeliculaSerie &pel
     return false;
 }
 
+void mostrarPeliculas(const Graph<PeliculaSerie> &movieGraph)
+{
+    cout << "Películas disponibles:" << endl;
+    for (int i = 0; i < movieGraph.vertexList.size(); i++)
+    {
+        PeliculaSerie pelicula = movieGraph.vertexList.get(i)->data;
+        cout << "ID: " << pelicula.id << " - " << pelicula.titulo << endl;
+    }
+}
 // coje las peliculas para posterior añadir las aristas de enlazamiento usando la funcion de arriba para validad si las tienen en comun
 
 void enlazarPeliculasPorCategoria(Graph<PeliculaSerie> &movieGraph)
@@ -544,6 +554,73 @@ void calificarPeliculaPreferida(Graph<Usuario> &userGraph, Graph<PeliculaSerie> 
     }
 }
 
+vector<string> split(const string &s, char delimiter)
+{
+    vector<std::string> tokens;
+    string token;
+    stringstream tokenStream(s);
+
+    while (getline(tokenStream, token, delimiter))
+    {
+        tokens.push_back(token);
+    }
+
+    return tokens;
+}
+void agregarPelicula(Graph<PeliculaSerie> &movieGraph)
+{
+    PeliculaSerie nuevaPelicula;
+    cout << "Agregar nueva película" << endl;
+    cout << "Ingrese el título: ";
+    getline(cin >> ws, nuevaPelicula.titulo);
+    cout << "Ingrese la descripción: ";
+    getline(cin, nuevaPelicula.descripcion);
+    cout << "Ingrese la duración: ";
+    getline(cin, nuevaPelicula.duracion);
+
+    string categoriasInput, actoresInput;
+    cout << "Ingrese las categorías (separadas por comas): ";
+    getline(cin, categoriasInput);
+    nuevaPelicula.categorias = split(categoriasInput, ',');
+
+    cout << "Ingrese los actores (separados por comas): ";
+    getline(cin, actoresInput);
+    nuevaPelicula.actores = split(actoresInput, ',');
+
+    nuevaPelicula.id = "movie " + to_string(movieGraph.vertexList.size() + 1);
+    nuevaPelicula.calificacion = 0.0;
+    nuevaPelicula.numCalificaciones = 0;
+
+    movieGraph.addVertex(nuevaPelicula);
+    cout << "Película agregada exitosamente." << endl;
+}
+
+void eliminarPelicula(Graph<PeliculaSerie> &movieGraph)
+{
+    mostrarPeliculas(movieGraph);
+
+    string idPelicula;
+    cout << "\nIngrese el ID de la película a eliminar: ";
+    cin >> ws;
+    getline(cin, idPelicula);
+    cout << "id ingresado: " << idPelicula << endl;
+    Vertex<PeliculaSerie> *vertex = movieGraph.getVertexById(idPelicula);
+    if (vertex == nullptr)
+    {
+        cout << "No se encontró la película con el ID proporcionado." << endl;
+        return;
+    }
+
+    if (movieGraph.removeVertex(idPelicula))
+    {
+        cout << "Película eliminada exitosamente." << endl;
+    }
+    else
+    {
+        cout << "No se pudo eliminar la película." << endl;
+    }
+}
+
 // Funcion para pushear los datos que tenga de mi user en el grafo hacia el objeto del json
 void guardarUsuariosEnJSON(const Graph<Usuario> &userGraph, const string &archivo)
 {
@@ -591,19 +668,19 @@ void guardarPeliculasEnJSON(const Graph<PeliculaSerie> &movieGraph, const string
 void mostrarCategorias()
 {
     cout << "Categorías disponibles:" << endl;
-    cout << "1. Acción" << endl;
+    cout << "1. Accion" << endl;
     cout << "2. Comedia" << endl;
     cout << "3. Drama" << endl;
     cout << "4. Terror" << endl;
     cout << "5. Sci-fi" << endl;
     cout << "6. Documental" << endl;
     cout << "7. Animacion" << endl;
-    cout << "8. Bélica" << endl;
+    cout << "8. Belica" << endl;
     cout << "9. Crimen" << endl;
     cout << "10. Romance" << endl;
     cout << "11. Aventura" << endl;
     cout << "12. Thriller" << endl;
-    cout << "13. Fantasía" << endl;
+    cout << "13. Fantasia" << endl;
     cout << "14. Biografia" << endl;
     cout << "15. Musical" << endl;
     cout << "16. Misterio" << endl;
@@ -685,10 +762,12 @@ void administrarPeliculas(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movie
     switch (opcionAdmin)
     {
     case 1:
-        // agregarPelicula(movieGraph);
+        agregarPelicula(movieGraph);
+        guardarPeliculasEnJSON(movieGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Movies/Series.json");
         break;
     case 2:
-        // eliminarPelicula(movieGraph);
+        eliminarPelicula(movieGraph);
+        guardarPeliculasEnJSON(movieGraph, "C:/Users/redjh/Desktop/Universidad/Estructuras/Proyecto/Data/Movies/Series.json");
         break;
     case 3:
         // Regresar al menú principal
@@ -742,7 +821,7 @@ void menuUsuario(Graph<Usuario> &userGraph, Graph<PeliculaSerie> &movieGraph, co
         case 5:
             if (user.rol == ADMIN)
             {
-                // administrarPeliculas(userGraph, movieGraph);
+                administrarPeliculas(userGraph, movieGraph);
                 break;
             case 6:
                 if (user.rol == ADMIN)

@@ -155,3 +155,21 @@ Vertex<T> *Graph<T>::getVertexById(const string &id)
     }
     return nullptr;
 }
+
+template <typename T>
+bool Graph<T>::removeVertex(const string &vertexId)
+{
+    for (int i = 0; i < vertexList.size(); i++)
+    {
+        Vertex<T> *currentVertex = vertexList.get(i);
+
+        if (currentVertex->data.id == vertexId)
+        {
+
+            delete currentVertex;
+            vertexList.erase(i);
+            return true;
+        }
+    }
+    return false; // Vértice no encontrado
+}
