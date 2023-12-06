@@ -1281,18 +1281,5 @@
         "id": "movie 99",
         "numCalificaciones": 0,
         "titulo": "The Bridge on the River Kwai"
-    },
-    {
-        "actores": [],
-        "calificacion": 0.0,
-        "categorias": [
-            "Terror",
-            "Drama"
-        ],
-        "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
-        "duracion": "2h 26m",
-        "id": "movie 100",
-        "numCalificaciones": 0,
-        "titulo": "The Shining"
     }
 ]

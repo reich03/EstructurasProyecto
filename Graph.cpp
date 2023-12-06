@@ -161,15 +161,12 @@ bool Graph<T>::removeVertex(const string &vertexId)
 {
     for (int i = 0; i < vertexList.size(); i++)
     {
-        Vertex<T> *currentVertex = vertexList.get(i);
-
-        if (currentVertex->data.id == vertexId)
+        if (vertexList.get(i)->data.id == vertexId)
         {
-
-            delete currentVertex;
+            delete vertexList.get(i);
             vertexList.erase(i);
             return true;
         }
     }
-    return false; // Vértice no encontrado
+    return false; // Vértice no encontrado.
 }
