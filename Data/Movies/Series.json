@@ -1257,29 +1257,21 @@
         "titulo": "The Thing"
     },
     {
-        "actores": [],
-        "calificacion": 4.599999904632568,
-        "categorias": [
-            "Musical",
-            "Comedia"
+        "actores": [
+            "Goku",
+            "Vegeta",
+            "Gohan"
         ],
-        "descripcion": "Un musical de comedia y culto dirigido por Jim Sharman",
-        "duracion": "1h 41m",
-        "id": "movie 98",
-        "numCalificaciones": 1,
-        "titulo": "The Rocky Horror Picture Show"
-    },
-    {
-        "actores": [],
         "calificacion": 0.0,
         "categorias": [
-            "Belica",
-            "Drama"
+            "Accion",
+            "Aventura",
+            "Fantasia"
         ],
-        "descripcion": "Un clásico bélico dirigido por David Lean",
-        "duracion": "2h 41m",
-        "id": "movie 99",
+        "descripcion": "La obra de akira toriyama donde los guerreros z buscaran salvar el universo",
+        "duracion": "2h 28m",
+        "id": "movie 98",
         "numCalificaciones": 0,
-        "titulo": "The Bridge on the River Kwai"
+        "titulo": "Dragon ball Z"
     }
 ]

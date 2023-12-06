@@ -157,16 +157,35 @@ Vertex<T> *Graph<T>::getVertexById(const string &id)
 }
 
 template <typename T>
-bool Graph<T>::removeVertex(const string &vertexId)
-{
-    for (int i = 0; i < vertexList.size(); i++)
-    {
-        if (vertexList.get(i)->data.id == vertexId)
-        {
-            delete vertexList.get(i);
-            vertexList.erase(i);
-            return true;
+bool Graph<T>::removeVertex(const string &vertexId) {
+    Vertex<T> *vertexToRemove = nullptr;
+    int indexToRemove = -1;
+
+    for (int i = 0; i < vertexList.size(); i++) {
+        if (vertexList.get(i)->data.id == vertexId) {
+            vertexToRemove = vertexList.get(i);
+            indexToRemove = i;
+            break;
         }
     }
-    return false; // Vértice no encontrado.
+
+    if (!vertexToRemove) {
+        return false;
+    }
+
+    for (int i = 0; i < vertexList.size(); i++) {
+        Vertex<T> *currentVertex = vertexList.get(i);
+        List<Edge<T> *> &edges = currentVertex->connectedTo;
+        for (int j = edges.size() - 1; j >= 0; j--) {
+            if (edges.get(j)->to == vertexToRemove) {
+                edges.erase(j);
+            }
+        }
+    }
+
+    delete vertexToRemove;
+    vertexList.erase(indexToRemove);
+
+    return true;
 }
+
