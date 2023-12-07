@@ -554,6 +554,18 @@ void calificarPeliculaPreferida(Graph<Usuario> &userGraph, Graph<PeliculaSerie> 
     }
 }
 
+void enlazarNuevaPelicula(Graph<PeliculaSerie> &movieGraph, PeliculaSerie &nuevaPelicula)
+{
+    for (int i = 0; i < movieGraph.vertexList.size(); i++)
+    {
+        PeliculaSerie &peliculaExistente = movieGraph.vertexList.get(i)->data;
+        if (nuevaPelicula.id != peliculaExistente.id && compartenCategoria(nuevaPelicula, peliculaExistente))
+        {
+            movieGraph.addCategoryEdge(nuevaPelicula.id, peliculaExistente.id);
+        }
+    }
+}
+
 vector<string> split(const string &s, char delimiter)
 {
     vector<std::string> tokens;
@@ -592,6 +604,7 @@ void agregarPelicula(Graph<PeliculaSerie> &movieGraph)
     nuevaPelicula.numCalificaciones = 0;
 
     movieGraph.addVertex(nuevaPelicula);
+    enlazarNuevaPelicula(movieGraph, nuevaPelicula);
     cout << "Película agregada exitosamente." << endl;
 }
 
