@@ -1,5 +1,8 @@
 #include "singup_normal.h"
 #include "ui_singup_normal.h"
+#include "signup.h"
+#include <QMessageBox>
+#include <QDebug>
 
 singup_normal::singup_normal(QWidget *parent) :
     QDialog(parent),
@@ -21,11 +24,10 @@ void singup_normal::on_okandcancel_rejected()
 
 void singup_normal::on_okandcancel_accepted()
 {
-    if(ui->Normal->isChecked()){
 
-        QString name=ui->Name ->text();
-        QString user=ui->Email ->text();
-        QString password=ui->Passw ->text();
+        QString name=ui->Name_3 ->text();
+        QString user=ui->email ->text();
+        QString password=ui->passw ->text();
         qDebug()<<name;
         qDebug()<<user;
         qDebug()<<password;
@@ -46,4 +48,5 @@ void singup_normal::on_okandcancel_accepted()
             QMessageBox::critical(this,tr("ERROR"),tr("User already in use"));
         }
 }
+
 
