@@ -12,3 +12,15 @@ delete_acc::~delete_acc()
 {
     delete_acc ui;
 }
+
+void delete_acc::on_cancel_clicked()
+{
+    reject();
+}
+
+
+void delete_acc::on_delete_2_clicked()
+{
+
+}
+

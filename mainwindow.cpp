@@ -31,23 +31,29 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_SignUp_clicked()
 {
-    SignUp *registro = new SignUp(0);
-    registro->show();
+    reject();
+    SignUp registro;
+    registro.setModal(true);
+    registro.exec();
 }
 
 
 void MainWindow::on_NUser_clicked()
 {
-    Login *Nuser = new Login(0);
-    Nuser->show();
+    reject();
+    Login Nuser;
+    Nuser.setModal(true);
+    Nuser.exec();
 }
 
 
 
 void MainWindow::on_Admin_clicked()
 {
-    login_admin *admin= new login_admin(0);
-    admin->show();
+    reject();
+    login_admin admin;
+    admin.setModal(true);
+    admin.exec();
 }
 
 

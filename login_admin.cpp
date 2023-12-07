@@ -27,8 +27,10 @@ void login_admin::on_login_adm_clicked()
     QString passw2;
     QString consult;
     QString name;
+
     consult.append("SELECT * FROM admin where user='"+user+"'");
     search.prepare(consult);
+
     if(search.exec()){
         qDebug()<<"consulta";
         while(search.next()){
@@ -41,13 +43,15 @@ void login_admin::on_login_adm_clicked()
         qDebug()<<"no consulta";
         QMessageBox::critical(this, tr("ERROR"),tr("User doesn't exist"));
     }
+
     if(passw2==passw){
         QMessageBox message;
         message.setText("Welcome");
         message.exec();
         accept();
-        index *admin=new index(0);
-        admin->show();
+        index admin;
+        admin.setModal(true);
+        admin.exec();
     }else{
         QMessageBox::critical(this,tr("ERROR"),tr("Incorrect Password"));
     }

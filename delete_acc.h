@@ -15,6 +15,11 @@ public:
     explicit delete_acc(QWidget *parent = nullptr);
     ~delete_acc();
 
+private slots:
+    void on_cancel_clicked();
+
+    void on_delete_2_clicked();
+
 private:
     Ui::delete_acc *ui;
 };

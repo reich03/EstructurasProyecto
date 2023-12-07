@@ -166,6 +166,24 @@ font: 900 9pt &quot;Segoe UI&quot;;</string>
     <string>Delete Account</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="ch_password">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>240</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(0, 0, 0, 255));
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(184, 238, 255, 255));
+font: 900 9pt &quot;Segoe UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Change Password</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

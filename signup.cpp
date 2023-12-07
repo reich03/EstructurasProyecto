@@ -29,6 +29,7 @@ void SignUp::table_nuser(){
 
     QSqlQuery create;
     create.prepare(table_nuser);
+
     if(create.exec()){
         qDebug()<<"melo2";
     }else{
@@ -46,6 +47,7 @@ void SignUp::table_admin(){
 
     QSqlQuery create;
     create.prepare(table_ad);
+
     if(create.exec()){
         qDebug()<<"melo2";
     }else{

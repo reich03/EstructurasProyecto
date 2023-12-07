@@ -19,21 +19,27 @@ index::~index()
 
 void index::on_me_clicked()
 {
-    me_admin *me= new me_admin(0);
-    me->show();
+    reject();
+    me_admin me;
+    me.setModal(true);
+    me.exec();
 }
 
 
 void index::on_users_clicked()
 {
-    view_users *users=new view_users(0);
-    users->show();
+    reject();
+    view_users users;
+    users.setModal(true);
+    users.exec();
 }
 
 
 void index::on_likes_clicked()
 {
-    favs *favourites = new favs(0);
-    favourites->show();
+    reject();
+    favs favourites;
+    favourites.setModal(true);
+    favourites.exec();
 }
 

@@ -17,14 +17,18 @@ view_users::~view_users()
 
 void view_users::on_movies_clicked()
 {
-    index *admin=new index(0);
-    admin->show();
+    reject();
+    index admin;
+    admin.setModal(true);
+    admin.exec();
 }
 
 
 void view_users::on_me_clicked()
 {
-    me_admin *me= new me_admin(0);
-    me->show();
+    reject();
+    me_admin me;
+    me.setModal(true);
+    me.exec();
 }
 

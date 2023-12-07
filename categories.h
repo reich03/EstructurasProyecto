@@ -15,6 +15,9 @@ public:
     explicit categories(QWidget *parent = nullptr);
     ~categories();
 
+private slots:
+    void on_continue_2_clicked();
+
 private:
     Ui::categories *ui;
 };

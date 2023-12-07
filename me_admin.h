@@ -23,6 +23,12 @@ private slots:
 
     void on_users_clicked();
 
+    void on_delete_2_clicked();
+
+    void on_logout_clicked();
+
+    void on_ch_password_clicked();
+
 private:
     Ui::me_admin *ui;
 };

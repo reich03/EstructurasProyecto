@@ -23,6 +23,8 @@ private slots:
 
     void on_me_clicked();
 
+    void on_dislike_clicked();
+
 private:
     Ui::favs *ui;
 };

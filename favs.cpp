@@ -17,14 +17,24 @@ favs::~favs()
 
 void favs::on_home_clicked()
 {
-    index_nuser *user=new index_nuser(0);
-    user->show();
+    reject();
+    index_nuser user;
+    user.setModal(true);
+    user.exec();
 }
 
 
 void favs::on_me_clicked()
 {
-    me_nuser *me= new me_nuser(0);
-    me->show();
+    reject();
+    me_nuser me;
+    me.setModal(true);
+    me.exec();
+}
+
+
+void favs::on_dislike_clicked()
+{
+
 }
 

@@ -17,11 +17,16 @@ class index_nuser : public QDialog
 public:
     explicit index_nuser(QWidget *parent = nullptr);
     ~index_nuser();
+    //extern bool check_likes;
 
 private slots:
     void on_likes_clicked();
 
     void on_me_clicked();
+
+    void on_dislike_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::index_nuser *ui;

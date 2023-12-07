@@ -27,6 +27,10 @@ private slots:
 
     void on_delete_2_clicked();
 
+    void on_logout_clicked();
+
+    void on_ch_categories_clicked();
+
 private:
     Ui::me_nuser *ui;
 };

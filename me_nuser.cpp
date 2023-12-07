@@ -3,6 +3,7 @@
 #include "index_nuser.h"
 #include "favs.h"
 #include "chang_passw.h"
+#include "mainwindow.h"
 #include "QMessageBox"
 #include "delete_acc.h"
 
@@ -20,22 +21,51 @@ me_nuser::~me_nuser()
 
 void me_nuser::on_home_clicked()
 {
-    index_nuser *user= new index_nuser(0);
-    user->show();
+    reject();
+    index_nuser user;
+    user.setModal(true);
+    user.exec();
 }
 
 
 void me_nuser::on_likes_clicked()
 {
-    favs *fav=new favs(0);
-    fav->show();
+    reject();
+    favs favourites;
+    favourites.setModal(true);
+    favourites.exec();
 }
 
 
 void me_nuser::on_ch_password_clicked()
 {
+    reject();
+    change_password change;
+    change.setModal(true);
+    change.exec();
+}
 
-    change_password *change= new change_password(0);
-    change->show();
+
+void me_nuser::on_delete_2_clicked()
+{
+    reject();
+    delete_acc borrar;
+    borrar.setModal(true);
+    borrar.exec();
+}
+
+
+void me_nuser::on_logout_clicked()
+{
+    reject();
+    MainWindow main;
+    main.setModal(true);
+    main.exec();
+}
+
+
+void me_nuser::on_ch_categories_clicked()
+{
+
 }
 

@@ -25,8 +25,10 @@ void Login::on_login_clicked()
     QString passw2;
     QString validate;
     QString name;
+
     validate.append("SELECT * FROM normal_users where user='"+user+"'");
     search.prepare(validate);
+
     if(search.exec()){
         qDebug()<<"listo";
         while(search.next()){
@@ -39,13 +41,15 @@ void Login::on_login_clicked()
         qDebug()<<"no listo";
         QMessageBox::critical(this, tr("ERROR"), tr("User doesn't exist"));
     }
+
     if(passw2==passw){
         QMessageBox message;
         message.setText("Welcome");
         message.exec();
         accept();
-        categories *categoria=new categories(0);
-        categoria->show();
+        categories categoria;
+        categoria.setModal(true);
+        categoria.exec();
     }else{
         QMessageBox::critical(this,tr("ERROR"),tr("Incorrect Password"));
     }
