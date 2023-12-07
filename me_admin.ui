@@ -166,12 +166,12 @@ font: 900 9pt &quot;Segoe UI&quot;;</string>
     <string>Delete Account</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="ch_password">
+  <widget class="QPushButton" name="update">
    <property name="geometry">
     <rect>
      <x>60</x>
      <y>240</y>
-     <width>121</width>
+     <width>131</width>
      <height>24</height>
     </rect>
    </property>
@@ -181,7 +181,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgb
 font: 900 9pt &quot;Segoe UI&quot;;</string>
    </property>
    <property name="text">
-    <string>Change Password</string>
+    <string>Update Information</string>
    </property>
   </widget>
  </widget>

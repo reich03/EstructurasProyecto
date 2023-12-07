@@ -69,3 +69,9 @@ void me_nuser::on_ch_categories_clicked()
 
 }
 
+
+void me_nuser::on_update_clicked()
+{
+
+}
+

@@ -31,6 +31,8 @@ private slots:
 
     void on_ch_categories_clicked();
 
+    void on_update_clicked();
+
 private:
     Ui::me_nuser *ui;
 };

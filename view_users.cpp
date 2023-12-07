@@ -2,6 +2,7 @@
 #include "ui_view_users.h"
 #include "index_admin.h"
 #include "me_admin.h"
+#include "signup.h"
 
 view_users::view_users(QWidget *parent) :
     QDialog(parent),
@@ -30,5 +31,14 @@ void view_users::on_me_clicked()
     me_admin me;
     me.setModal(true);
     me.exec();
+}
+
+
+void view_users::on_create_clicked()
+{
+    reject();
+    SignUp registro;
+    registro.setModal(true);
+    registro.exec();
 }
 

@@ -23,6 +23,7 @@ SOURCES += \
     me_admin.cpp \
     me_nuser.cpp \
     signup.cpp \
+    singup_normal.cpp \
     view_users.cpp
 
 HEADERS += \
@@ -39,6 +40,7 @@ HEADERS += \
     me_admin.h \
     me_nuser.h \
     signup.h \
+    singup_normal.h \
     view_users.h
 
 FORMS += \
@@ -55,6 +57,7 @@ FORMS += \
     me_admin.ui \
     me_nuser.ui \
     signup.ui \
+    singup_normal.ui \
     view_users.ui
 
 # Default rules for deployment.

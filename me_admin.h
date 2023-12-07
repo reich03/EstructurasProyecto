@@ -29,6 +29,8 @@ private slots:
 
     void on_ch_password_clicked();
 
+    void on_update_clicked();
+
 private:
     Ui::me_admin *ui;
 };

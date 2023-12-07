@@ -3,6 +3,7 @@
 #include "login.h"
 #include "signup.h"
 #include "login_admin.h"
+#include "singup_normal.h"
 #include <QFileDialog>
 #include <QTextStream>
 #include <QFile>
@@ -32,7 +33,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_SignUp_clicked()
 {
     reject();
-    SignUp registro;
+    singup_normal registro;
     registro.setModal(true);
     registro.exec();
 }

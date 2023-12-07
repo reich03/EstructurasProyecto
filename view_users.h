@@ -23,6 +23,8 @@ private slots:
 
     void on_me_clicked();
 
+    void on_create_clicked();
+
 private:
     Ui::view_users *ui;
 };

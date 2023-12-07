@@ -62,3 +62,9 @@ void me_admin::on_ch_password_clicked()
     passw.exec();
 }
 
+
+void me_admin::on_update_clicked()
+{
+
+}
+
