@@ -24,9 +24,7 @@
         "categoriasInteres": [
             "Terror",
             "Animacion",
-            "Musical",
-            "Belica",
-            "Fantasia"
+            "Thriller"
         ],
         "correo": "redjhojan0319@gmail.com",
         "id": "user3",
@@ -37,7 +35,10 @@
             "movie 33",
             "movie 59",
             "movie 98",
-            "movie 101"
+            "movie 101",
+            "movie 23",
+            "movie 28",
+            "movie 54"
         ],
         "rol": "ADMIN"
     },
@@ -69,11 +70,16 @@
         "rol": "USER"
     },
     {
-        "categoriasInteres": [],
+        "categoriasInteres": [
+            "Accion",
+            "Terror",
+            "Documental",
+            "Crimen"
+        ],
         "correo": "pedro@gmail.com",
         "id": "user7",
-        "nombre": "pedro",
-        "password": "suatixd",
+        "nombre": "pedro xd",
+        "password": "pedrooo",
         "preferencias": [],
         "rol": "USER"
     },
@@ -181,5 +187,57 @@
         "password": "valeria",
         "preferencias": [],
         "rol": "ADMIN"
+    },
+    {
+        "categoriasInteres": [
+            "Accion",
+            "Animacion",
+            "Fantasia"
+        ],
+        "correo": "matias@gmail.com",
+        "id": "user17",
+        "nombre": "Matias ",
+        "password": "matias123",
+        "preferencias": [
+            "movie 7",
+            "movie 13",
+            "movie 53",
+            "movie 66",
+            "movie 71",
+            "movie 91",
+            "movie 98"
+        ],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "matias@ejemplo.com",
+        "id": "user18",
+        "nombre": "matias2",
+        "password": "admin",
+        "preferencias": [],
+        "rol": "ADMIN"
+    },
+    {
+        "categoriasInteres": [],
+        "correo": "suatichat@gmail.com",
+        "id": "user19",
+        "nombre": "suat gonzales",
+        "password": "admin",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [
+            "Accion",
+            "Comedia",
+            "Drama"
+        ],
+        "correo": "santiago@gmail.com",
+        "id": "user20",
+        "nombre": "santiago alarcon",
+        "password": "santi",
+        "preferencias": [],
+        "rol": "USER"
     }
 ]

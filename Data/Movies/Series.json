@@ -6,7 +6,7 @@
             "Sci-fi",
             "Thriller"
         ],
-        "descripcion": "Una película de ficción",
+        "descripcion": "Una pelicula de ficción",
         "duracion": "2h 28m",
         "id": "movie 1",
         "numCalificaciones": 0,
@@ -31,7 +31,7 @@
             "Accion",
             "Drama"
         ],
-        "descripcion": "Una película de superhéroes dirigida por Christopher Nolan",
+        "descripcion": "Una pelicula de superhéroes dirigida por Christopher Nolan",
         "duracion": "2h 32m",
         "id": "movie 3",
         "numCalificaciones": 0,
@@ -78,7 +78,7 @@
     },
     {
         "actores": [],
-        "calificacion": 0.0,
+        "calificacion": 4.599999904632568,
         "categorias": [
             "Sci-fi",
             "Accion"
@@ -86,7 +86,7 @@
         "descripcion": "Un viaje de ciencia ficción que explora la realidad virtual",
         "duracion": "2h 16m",
         "id": "movie 7",
-        "numCalificaciones": 0,
+        "numCalificaciones": 1,
         "titulo": "The Matrix"
     },
     {
@@ -95,7 +95,7 @@
         "categorias": [
             "Drama"
         ],
-        "descripcion": "Un drama histórico sobre un empresario que salva a judíos durante el Holocausto",
+        "descripcion": "Un drama histórico sobre un empresario que salva a judios durante el Holocausto",
         "duracion": "3h 15m",
         "id": "movie 8",
         "numCalificaciones": 0,
@@ -160,7 +160,7 @@
             "Fantasia",
             "Aventura"
         ],
-        "descripcion": "La primera entrega de la trilogía épica de Fantasia dirigida por Peter Jackson",
+        "descripcion": "La primera entrega de la trilogia épica de Fantasia dirigida por Peter Jackson",
         "duracion": "2h 58m",
         "id": "movie 13",
         "numCalificaciones": 0,
@@ -173,7 +173,7 @@
             "Drama",
             "Thriller"
         ],
-        "descripcion": "Un drama psicológico sobre la alienación y la rebeldía",
+        "descripcion": "Un drama psicológico sobre la alienación y la rebeldia",
         "duracion": "2h 19m",
         "id": "movie 14",
         "numCalificaciones": 0,
@@ -206,13 +206,16 @@
         "titulo": "The Social Network"
     },
     {
-        "actores": [],
+        "actores": [
+            "Pedrito fernandez",
+            "Eugenio derbez"
+        ],
         "calificacion": 4.599999904632568,
         "categorias": [
             "Terror",
             "Drama"
         ],
-        "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
+        "descripcion": "Una pelicula de terror psicológico basada en la novela de Stephen King",
         "duracion": "2h 26m",
         "id": "movie 17",
         "numCalificaciones": 2,
@@ -355,7 +358,7 @@
             "Aventura",
             "Fantasia"
         ],
-        "descripcion": "Una película de aventuras y Fantasia con romance",
+        "descripcion": "Una pelicula de aventuras y Fantasia con romance",
         "duracion": "1h 38m",
         "id": "movie 28",
         "numCalificaciones": 0,
@@ -415,7 +418,7 @@
     },
     {
         "actores": [],
-        "calificacion": 0.0,
+        "calificacion": 4.099999904632568,
         "categorias": [
             "Musical",
             "Romance"
@@ -423,7 +426,7 @@
         "descripcion": "Un musical romántico dirigido por Damien Chazelle",
         "duracion": "2h 8m",
         "id": "movie 33",
-        "numCalificaciones": 0,
+        "numCalificaciones": 1,
         "titulo": "La La Land"
     },
     {
@@ -472,7 +475,7 @@
             "Sci-fi",
             "Drama"
         ],
-        "descripcion": "Una película de ciencia ficción distópica dirigida por Stanley Kubrick",
+        "descripcion": "Una pelicula de ciencia ficción distópica dirigida por Stanley Kubrick",
         "duracion": "2h 16m",
         "id": "movie 37",
         "numCalificaciones": 0,
@@ -485,7 +488,7 @@
             "Accion",
             "Aventura"
         ],
-        "descripcion": "Una película de James Bond dirigida por Martin Campbell",
+        "descripcion": "Una pelicula de James Bond dirigida por Martin Campbell",
         "duracion": "2h 24m",
         "id": "movie 38",
         "numCalificaciones": 0,
@@ -588,7 +591,7 @@
             "Sci-fi",
             "Aventura"
         ],
-        "descripcion": "Una película de ciencia ficción y aventuras dirigida por Luc Besson",
+        "descripcion": "Una pelicula de ciencia ficción y aventuras dirigida por Luc Besson",
         "duracion": "2h 6m",
         "id": "movie 46",
         "numCalificaciones": 0,
@@ -601,7 +604,7 @@
             "Comedia",
             "Romance"
         ],
-        "descripcion": "Una comedia romántica sobre la repetición del mismo día dirigida por Harold Ramis",
+        "descripcion": "Una comedia romántica sobre la repetición del mismo dia dirigida por Harold Ramis",
         "duracion": "1h 41m",
         "id": "movie 47",
         "numCalificaciones": 0,
@@ -653,7 +656,7 @@
             "Animación",
             "Aventura"
         ],
-        "descripcion": "Una película de animación y superhéroes dirigida por Brad Bird",
+        "descripcion": "Una pelicula de animación y superhéroes dirigida por Brad Bird",
         "duracion": "1h 55m",
         "id": "movie 51",
         "numCalificaciones": 0,
@@ -756,7 +759,7 @@
             "Terror",
             "Drama"
         ],
-        "descripcion": "Un clásico de terror sobre posesión demoníaca dirigido por William Friedkin",
+        "descripcion": "Un clásico de terror sobre posesión demoniaca dirigido por William Friedkin",
         "duracion": "2h 2m",
         "id": "movie 59",
         "numCalificaciones": 1,
@@ -912,7 +915,7 @@
             "Sci-fi",
             "Accion"
         ],
-        "descripcion": "La secuela de la clásica película de ciencia ficción dirigida por James Cameron",
+        "descripcion": "La secuela de la clásica pelicula de ciencia ficción dirigida por James Cameron",
         "duracion": "2h 17m",
         "id": "movie 71",
         "numCalificaciones": 0,
@@ -964,7 +967,7 @@
             "Terror",
             "Drama"
         ],
-        "descripcion": "Una película de terror psicológico basada en la novela de Stephen King",
+        "descripcion": "Una pelicula de terror psicológico basada en la novela de Stephen King",
         "duracion": "2h 26m",
         "id": "movie 75",
         "numCalificaciones": 0,
@@ -977,7 +980,7 @@
             "Animación",
             "Aventura"
         ],
-        "descripcion": "Una película de animación y superhéroes dirigida por Brad Bird",
+        "descripcion": "Una pelicula de animación y superhéroes dirigida por Brad Bird",
         "duracion": "1h 55m",
         "id": "movie 76",
         "numCalificaciones": 0,
@@ -1080,7 +1083,7 @@
             "Terror",
             "Drama"
         ],
-        "descripcion": "Un clásico de terror sobre posesión demoníaca dirigido por William Friedkin",
+        "descripcion": "Un clásico de terror sobre posesión demoniaca dirigido por William Friedkin",
         "duracion": "2h 2m",
         "id": "movie 84",
         "numCalificaciones": 0,
@@ -1236,7 +1239,7 @@
             "Sci-fi",
             "Accion"
         ],
-        "descripcion": "La secuela de la clásica película de ciencia ficción dirigida por James Cameron",
+        "descripcion": "La secuela de la clásica pelicula de ciencia ficción dirigida por James Cameron",
         "duracion": "2h 17m",
         "id": "movie 96",
         "numCalificaciones": 0,
