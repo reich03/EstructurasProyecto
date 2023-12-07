@@ -31,14 +31,9 @@
         "nombre": "Jhojan Grisales",
         "password": "admin",
         "preferencias": [
-            "movie 17",
-            "movie 33",
-            "movie 59",
-            "movie 98",
-            "movie 101",
-            "movie 23",
-            "movie 28",
-            "movie 54"
+            "movie 1",
+            "movie 14",
+            "movie 114"
         ],
         "rol": "ADMIN"
     },
@@ -102,12 +97,7 @@
         "id": "user9",
         "nombre": "pepe macias",
         "password": "admin",
-        "preferencias": [
-            "movie 3",
-            "movie 22",
-            "movie 71",
-            "movie 81"
-        ],
+        "preferencias": [],
         "rol": "USER"
     },
     {
@@ -150,24 +140,12 @@
         "rol": "USER"
     },
     {
-        "categoriasInteres": [
-            "Comedia",
-            "Terror",
-            "Aventura",
-            "Misterio"
-        ],
+        "categoriasInteres": [],
         "correo": "lamalapasuat@gmail.com",
         "id": "user14",
         "nombre": "pato suati",
         "password": "ejemplo",
-        "preferencias": [
-            "movie 6",
-            "movie 17",
-            "movie 20",
-            "movie 34",
-            "movie 36",
-            "movie 97"
-        ],
+        "preferencias": [],
         "rol": "USER"
     },
     {
@@ -198,15 +176,7 @@
         "id": "user17",
         "nombre": "Matias ",
         "password": "matias123",
-        "preferencias": [
-            "movie 7",
-            "movie 13",
-            "movie 53",
-            "movie 66",
-            "movie 71",
-            "movie 91",
-            "movie 98"
-        ],
+        "preferencias": [],
         "rol": "USER"
     },
     {
