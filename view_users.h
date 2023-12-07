@@ -25,6 +25,10 @@ private slots:
 
     void on_create_clicked();
 
+    void on_users_clicked();
+
+    void on_likes_clicked();
+
 private:
     Ui::view_users *ui;
 };

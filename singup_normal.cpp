@@ -1,6 +1,7 @@
 #include "singup_normal.h"
 #include "ui_singup_normal.h"
 #include "signup.h"
+#include "categories.h"
 #include <QMessageBox>
 #include <QDebug>
 
@@ -43,6 +44,9 @@ void singup_normal::on_okandcancel_accepted()
             message.setText("User created");
             message.exec();
             accept();
+            categories categoria;
+            categoria.setModal(true);
+            categoria.exec();
         }else{
             qDebug()<<"no melo3"<<insertdb.lastError();
             QMessageBox::critical(this,tr("ERROR"),tr("User already in use"));

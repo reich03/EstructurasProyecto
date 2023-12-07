@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>view_users</class>
- <widget class="QDialog" name="view_users">
-  <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
-  </property>
+ <class>favs_admin</class>
+ <widget class="QDialog" name="favs_admin">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>591</width>
-    <height>431</height>
+    <width>610</width>
+    <height>425</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(170, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(184, 238, 255, 255));</string>
   </property>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>340</y>
-     <width>591</width>
+     <y>330</y>
+     <width>611</width>
      <height>91</height>
     </rect>
    </property>
@@ -79,16 +76,16 @@ font: 600 9pt &quot;Sitka Small Semibold&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>591</width>
-     <height>89</height>
+     <width>611</width>
+     <height>59</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="top">
+   <layout class="QHBoxLayout" name="top">
     <item alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label">
       <property name="layoutDirection">
@@ -102,29 +99,11 @@ font: 600 9pt &quot;Sitka Small Semibold&quot;;</string>
 color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(0, 0, 0, 255));</string>
       </property>
       <property name="text">
-       <string>Users</string>
+       <string>My Favs</string>
       </property>
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QPushButton" name="create">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>310</y>
-     <width>121</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(0, 0, 0, 255));
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:1 rgba(184, 238, 255, 255));
-font: 900 9pt &quot;Segoe UI&quot;;</string>
-   </property>
-   <property name="text">
-    <string>Create User</string>
-   </property>
   </widget>
  </widget>
  <resources/>

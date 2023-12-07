@@ -2,8 +2,9 @@
 #include "ui_me_admin.h"
 #include "index_admin.h"
 #include "view_users.h"
-#include "chang_passw_admin.h"
 #include "mainwindow.h"
+#include "chang_passw.h"
+#include "favs_admin.h"
 #include "delete_acc.h"
 
 me_admin::me_admin(QWidget *parent) :
@@ -54,17 +55,20 @@ void me_admin::on_logout_clicked()
 }
 
 
-void me_admin::on_ch_password_clicked()
+void me_admin::on_update_clicked()
 {
     reject();
-    chang_passw_admin passw;
+    change_password passw;
     passw.setModal(true);
     passw.exec();
 }
 
 
-void me_admin::on_update_clicked()
+void me_admin::on_likes_clicked()
 {
-
+    reject();
+    favs_admin fav;
+    fav.setModal(true);
+    fav.exec();
 }
 

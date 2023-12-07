@@ -1,8 +1,8 @@
 #include "login.h"
 #include "ui_login.h"
-#include "categories.h"
 #include "QMessageBox"
 #include "QDebug"
+#include "index_nuser.h"
 
 Login::Login(QWidget *parent)
     : QDialog(parent)
@@ -47,9 +47,10 @@ void Login::on_login_clicked()
         message.setText("Welcome");
         message.exec();
         accept();
-        categories categoria;
-        categoria.setModal(true);
-        categoria.exec();
+        index_nuser user;
+        user.setModal(true);
+        user.exec();
+
     }else{
         QMessageBox::critical(this,tr("ERROR"),tr("Incorrect Password"));
     }

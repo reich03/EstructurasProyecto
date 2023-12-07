@@ -2,7 +2,7 @@
 #include "ui_index_admin.h"
 #include "me_admin.h"
 #include "view_users.h"
-#include "favs.h"
+#include "favs_admin.h"
 #include <QDebug>
 
 index::index(QWidget *parent) :
@@ -38,7 +38,7 @@ void index::on_users_clicked()
 void index::on_likes_clicked()
 {
     reject();
-    favs favourites;
+    favs_admin favourites;
     favourites.setModal(true);
     favourites.exec();
 }

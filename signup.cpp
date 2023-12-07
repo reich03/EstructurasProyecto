@@ -1,5 +1,6 @@
 #include "signup.h"
 #include "ui_signup.h"
+#include "index_admin.h"
 #include <QDebug>
 #include <QMessageBox>
 
@@ -113,6 +114,9 @@ void SignUp::on_okandcancel_accepted()
 void SignUp::on_okandcancel_rejected()
 {
     reject();
+    index admin;
+    admin.setModal(true);
+    admin.exec();
 }
 
 

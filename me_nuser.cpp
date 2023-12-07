@@ -3,6 +3,7 @@
 #include "index_nuser.h"
 #include "favs.h"
 #include "chang_passw.h"
+#include "categories.h"
 #include "mainwindow.h"
 #include "QMessageBox"
 #include "delete_acc.h"
@@ -66,12 +67,18 @@ void me_nuser::on_logout_clicked()
 
 void me_nuser::on_ch_categories_clicked()
 {
-
+    reject();
+    categories cambiar;
+    cambiar.setModal(true);
+    cambiar.exec();
 }
 
 
 void me_nuser::on_update_clicked()
 {
-
+    reject();
+    change_password update;
+    update.setModal(true);
+    update.exec();
 }
 

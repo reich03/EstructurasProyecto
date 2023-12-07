@@ -15,6 +15,9 @@ public:
     explicit change_password(QWidget *parent = nullptr);
     ~change_password();
 
+private slots:
+    void on_update_clicked();
+
 private:
     Ui::change_password *ui;
 };

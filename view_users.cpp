@@ -2,6 +2,7 @@
 #include "ui_view_users.h"
 #include "index_admin.h"
 #include "me_admin.h"
+#include "favs_admin.h"
 #include "signup.h"
 
 view_users::view_users(QWidget *parent) :
@@ -40,5 +41,23 @@ void view_users::on_create_clicked()
     SignUp registro;
     registro.setModal(true);
     registro.exec();
+}
+
+
+void view_users::on_users_clicked()
+{
+    reject();
+    view_users users;
+    users.setModal(true);
+    users.exec();
+}
+
+
+void view_users::on_likes_clicked()
+{
+    reject();
+    favs_admin favourites;
+    favourites.setModal(true);
+    favourites.exec();
 }
 

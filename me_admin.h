@@ -31,6 +31,8 @@ private slots:
 
     void on_update_clicked();
 
+    void on_likes_clicked();
+
 private:
     Ui::me_admin *ui;
 };

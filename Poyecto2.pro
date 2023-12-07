@@ -11,9 +11,9 @@ CONFIG += c++17
 SOURCES += \
     categories.cpp \
     chang_passw.cpp \
-    chang_passw_admin.cpp \
     delete_acc.cpp \
     favs.cpp \
+    favs_admin.cpp \
     index_admin.cpp \
     index_nuser.cpp \
     login.cpp \
@@ -29,9 +29,9 @@ SOURCES += \
 HEADERS += \
     categories.h \
     chang_passw.h \
-    chang_passw_admin.h \
     delete_acc.h \
     favs.h \
+    favs_admin.h \
     index_admin.h \
     index_nuser.h \
     login.h \
@@ -46,9 +46,9 @@ HEADERS += \
 FORMS += \
     categories.ui \
     chang_passw.ui \
-    chang_passw_admin.ui \
     delete_acc.ui \
     favs.ui \
+    favs_admin.ui \
     index_admin.ui \
     index_nuser.ui \
     login.ui \
