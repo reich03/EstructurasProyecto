@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/ic">
-        <file>icons/heart.png</file>
-        <file>icons/x.png</file>
-    </qresource>
-</RCC>
