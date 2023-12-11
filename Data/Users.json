@@ -50,7 +50,7 @@
         "categoriasInteres": [],
         "correo": "ejemplo5@gmail.com",
         "id": "user5",
-        "nombre": "suati chat",
+        "nombre": " chat",
         "password": "admin1234",
         "preferencias": [],
         "rol": "USER"
@@ -141,9 +141,9 @@
     },
     {
         "categoriasInteres": [],
-        "correo": "lamalapasuat@gmail.com",
+        "correo": "labuenapasuat@gmail.com",
         "id": "user14",
-        "nombre": "pato suati",
+        "nombre": "suat",
         "password": "ejemplo",
         "preferencias": [],
         "rol": "USER"
@@ -207,6 +207,32 @@
         "id": "user20",
         "nombre": "santiago alarcon",
         "password": "santi",
+        "preferencias": [],
+        "rol": "USER"
+    },
+    {
+        "categoriasInteres": [
+            "Accion",
+            "Comedia",
+            "Drama",
+            "Terror",
+            "Sci-fi",
+            "Documental",
+            "Animacion",
+            "Belica",
+            "Crimen",
+            "Romance",
+            "Aventura",
+            "Thriller",
+            "Fantasia",
+            "Biografia",
+            "Musical",
+            "Misterio"
+        ],
+        "correo": "suat@gmail.com",
+        "id": "user21",
+        "nombre": "suat jara",
+        "password": "123",
         "preferencias": [],
         "rol": "USER"
     }

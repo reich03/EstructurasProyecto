@@ -13,6 +13,7 @@
 #include <chrono>
 
 using namespace std;
+int nextMovieId = 1;
 
 enum Categoria
 {
@@ -165,6 +166,7 @@ void cargarPeliculasDesdeJSON(Graph<PeliculaSerie> &movieGraph, const string &ar
     std::ifstream file(archivo);
     json jsonPeliculas;
     file >> jsonPeliculas;
+    int maxId = 0;
 
     for (const auto &j : jsonPeliculas)
     {
@@ -199,7 +201,13 @@ void cargarPeliculasDesdeJSON(Graph<PeliculaSerie> &movieGraph, const string &ar
         }
 
         movieGraph.addVertex(pelicula);
+        int idNum = stoi(pelicula.id.substr(6));
+        if (idNum > maxId)
+        {
+            maxId = idNum;
+        }
     }
+    nextMovieId = maxId + 1;
 }
 
 void guardarUsuariosEnJSON(const Graph<Usuario> &userGraph, const string &archivo)
@@ -563,7 +571,9 @@ void agregarPelicula(Graph<PeliculaSerie> &movieGraph)
     getline(cin, actoresInput);
     nuevaPelicula.actores = split(actoresInput, ',');
 
-    nuevaPelicula.id = "movie " + to_string(movieGraph.vertexList.size() + 1);
+    nuevaPelicula.id = "movie " + to_string(nextMovieId++);
+
+    // nuevaPelicula.id = "movie " + to_string(movieGraph.vertexList.size() + 1);
     nuevaPelicula.calificacion = 0.0;
     nuevaPelicula.numCalificaciones = 0;
 
@@ -770,7 +780,7 @@ void crearNuevoUsuario(Graph<Usuario> &userGraph, RolUsuario rolPorDefecto, bool
 /* Menus Programa*/
 void mostrarMenu(RolUsuario rolUsuario)
 {
-    cout << "\033[1;32m==== Menú de Usuario ====\033[0m\n";
+    cout << "\033[1;32m==== Menu de Usuario ====\033[0m\n";
     cout << "1. Ver mis preferencias" << endl;
     cout << "2. Calificar peliculas de mi interes" << endl;
     cout << "3. Mostrar peliculas recomendadas" << endl;
@@ -788,7 +798,7 @@ void menuPrincipal()
 {
 
     cout << "============================================\n";
-    cout << "               Menú Principal               \n";
+    cout << "               Menu Principal               \n";
     cout << "============================================\n";
     cout << "\033[1;32mBienvenido al Sistema de Recomendacion de Peliculas\033[0m\n";
 

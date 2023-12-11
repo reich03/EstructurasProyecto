@@ -16545,5 +16545,19 @@
         "id": "movie 999",
         "numCalificaciones": 0,
         "titulo": "las aventuras de no se quien"
+    },
+    {
+        "actores": [
+            "Goku"
+        ],
+        "calificacion": 0.0,
+        "categorias": [
+            "Accion"
+        ],
+        "descripcion": "jeeeee",
+        "duracion": "2h",
+        "id": "movie 1000",
+        "numCalificaciones": 0,
+        "titulo": "ejemplofinalista"
     }
 ]
